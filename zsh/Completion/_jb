@@ -1,0 +1,13 @@
+#compdef jb
+
+_jb() {    
+  local krupd
+  krupd="${PLN_DIST}/krupd" 
+  local -a commands
+  bash $krupd -buildfile ~/.krupd.xml -p | awk -F " " 'NF == 1 {print $1}'|
+    while read -r -A cmd; do commands=($cmd $commands) done
+    _describe -t commands 'jb' commands           
+    return 0
+}
+
+_jb
