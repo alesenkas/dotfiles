@@ -1,0 +1,123 @@
+scriptencoding utf-8
+
+"plugins (START)
+" vim-plug initilaization {{{
+if has("win32")
+   let s:dotvim = '~/vimfiles'
+else
+   let s:dotvim = '~/.vim'
+endif   
+let s:plug_file = s:dotvim . '/autoload/plug.vim'
+if !filereadable(expand(s:plug_file))
+   silent execute '!curl -fLo' s:plug_file '--create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+endif
+" }}}
+
+call plug#begin(s:dotvim . '/plugged')
+
+Plug 'udalov/javap-vim'
+Plug 'terryma/vim-multiple-cursors'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+Plug 'connorholyday/vim-snazzy'
+
+Plug 'itchyny/lightline.vim'
+Plug 'shinchu/lightline-gruvbox.vim'
+let g:lightline = {  
+      \ 'colorscheme': 'snazzy', 
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'relativepath', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ }
+      \ }
+      
+call plug#end()
+"plugins (END)
+
+set nocompatible               " убираем совместимость с Vi
+set nu!                        " нумерация строк
+set backspace=indent,eol,start " baskspace обрабатывает отступы, концы строк
+"colorscheme gruvbox            " устанавливаем цветовую схему
+colorscheme snazzy
+set shortmess+=I               " не показывать intro screen
+set cursorline                 " подсветка строки в которой находиться курсор
+set background=dark            " темная цветовая схема
+set matchpairs+={:}            " показывать совпадающие скобки
+set t_Co=256                   " больше цветов в терминале
+set t_ut=
+set showmatch                  " показывать первую первую парную скобку после ввода второй
+set laststatus=2
+filetype on
+filetype plugin indent on
+syntax on                      " Включаем подсветку синтаксиса
+set clipboard=unnamedplus      " Включаем использование глобального clipboard
+
+"КОДИРОВКИ
+" кодировка редактора (терминала) по умолчанию (при создании все файлы приводятся к этой кодировке)
+if has("win32")
+   set encoding=cp1251
+else
+   set encoding=utf-8
+   set termencoding=utf-8
+endif
+" формат файла по умолчанию (влияет на окончания строк) - будет перебираться в указанном порядке
+set fileformat=unix
+" варианты кодировки файла по умолчанию (все файлы по умолчанию сохраняются в этой кодировке)
+set fencs=utf-8,cp1251,koi8-r,cp866
+
+" Поиск
+set incsearch  " при поиске перескакивать на найденный текс в процессе набора строки
+set hlsearch   " включаем подсветку выражения, которое ищется в тексте
+set ignorecase " игнориоровать регистр букв при поиске
+set smartcase  " перекрываем игнорирование регистра, если в строке есть символы в uppercase
+set nohlsearch " (не)подсветка результатов поиска (после того, как поиск закончен и закрыт)
+
+" Табуляция
+set tabstop=4     " размер Tab
+set shiftwidth=4  " количество пробелов, вставляемых вместо Tab
+set expandtab     " замена Tab пробелами
+set softtabstop=4 " позволяет удалять Tab как Tab (но реально удаляется n пробелов)
+set autoindent    " автоматический отступ
+set nowrap        " убираем перенос строк
+
+" Бэкап и своп файлы
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Undo файлы
+let s:undodir = expand(s:dotvim . "/.udir")
+if !isdirectory(s:undodir)
+    call mkdir(s:undodir, 0700)
+endif
+execute "set undodir=" . s:undodir
+set undofile
+
+" Мапим горячие клавиши
+let mapleader=","
+let maplocalleader=","
+
+" NERDTree
+map<F12> :NERDTreeToggle <cr> 
+
+" сохранение файла по F2
+nnoremap <f2> :w <cr>
+nnoremap <leader>w :w <cr>
+inoremap <f2> <c-o>:w<cr>
+
+"работа с глобальным clipboard
+inoremap <C-v> <ESC>"+pa
+vnoremap <C-c> "+y
+vnoremap <C-d> "+d
+
+" fzf
+nnoremap <c-p> :Files<cr>
+nnoremap <leader>b :Buffers<cr>
+" }}}
