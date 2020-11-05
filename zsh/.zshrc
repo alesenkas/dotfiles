@@ -8,8 +8,8 @@ export JBOSS_HOME="$PLN_DIST/jboss-bas-8.2.1.krista44"
 # Colorizing dirs & files
 test -e ~/.dircolors && eval `dircolors ~/.dircolors`
 
-ZSH_THEME="pure"
-# ZSH_THEME="spy_noza"
+ZSH_THEME="spy_noza"
+# ZSH_THEME="pure"
 # ZSH_THEME="robbyrussell_custom"
 
 plugins=(
@@ -56,7 +56,7 @@ compdef _jb jb
 # fzf configuration
 export FZF_DEFAULT_OPTS="
 --border
---color fg:102,fg+:15,bg+:#282A36
+--color fg:102,fg+:15,bg+:#2B2B2B
 --color info:108,prompt:109,spinner:108,pointer:168,marker:168
 "
 
@@ -68,16 +68,16 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
-# pure theme clear screen fix
-prompt_pure_clear_screen() {
-	# enable output to terminal
-	zle -I
-	# clear screen and move cursor to (0, 0)
-	print -n '\e[2J\e[0;0H'
-	# print preprompt
-	prompt_pure_preprompt_render precmd
-}
-zle -N clear-screen prompt_pure_clear_screen
+# # pure theme clear screen fix
+# prompt_pure_clear_screen() {
+# 	# enable output to terminal
+# 	zle -I
+# 	# clear screen and move cursor to (0, 0)
+# 	print -n '\e[2J\e[0;0H'
+# 	# print preprompt
+# 	prompt_pure_preprompt_render precmd
+# }
+# zle -N clear-screen prompt_pure_clear_screen
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -202,6 +202,10 @@ hgf() {
     if [[ -n $rev ]]; then
         hg diff -c $rev
     fi    
+}
+
+hgnv() {
+    hg diff pom.xml | grep -E "\+.*<.*version>" | awk 'BEGIN{FS="<|>"}{print $2 " = " $3}'
 }
 
 pln_db_restore() {
