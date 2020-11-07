@@ -175,14 +175,14 @@ tns() {
 
     session_name=$1
     tmux new-session -d -s $session_name
-    tmux switch-client -t "$session_name"
+    tmux switch-client -t "$session_name" &>/dev/null || tmux attach-session -t "$session_name"  
 }
 
 tss() {
     local session
     session=$(tmux list-sessions -F "#{session_name}" | \
       fzf --height 40% --reverse --query="$1" --select-1 --exit-0) &&
-    tmux switch-client -t "$session"  
+    tmux switch-client -t "$session" &>/dev/null || tmux attach-session -t "$session" 
 }
 
 tks() {
