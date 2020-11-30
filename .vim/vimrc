@@ -23,12 +23,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-Plug 'connorholyday/vim-snazzy'
+"Plug 'connorholyday/vim-snazzy'
 
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 let g:lightline = {  
-      \ 'colorscheme': 'snazzy', 
+      \ 'colorscheme': 'gruvbox', 
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'relativepath', 'modified' ] ],
@@ -44,8 +44,8 @@ call plug#end()
 set nocompatible               " убираем совместимость с Vi
 set nu!                        " нумерация строк
 set backspace=indent,eol,start " baskspace обрабатывает отступы, концы строк
-"colorscheme gruvbox            " устанавливаем цветовую схему
-colorscheme snazzy
+colorscheme gruvbox            " устанавливаем цветовую схему
+"colorscheme snazzy
 set shortmess+=I               " не показывать intro screen
 set cursorline                 " подсветка строки в которой находиться курсор
 set background=dark            " темная цветовая схема
@@ -120,4 +120,6 @@ vnoremap <C-d> "+d
 " fzf
 nnoremap <c-p> :Files<cr>
 nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>l :Lines<cr>
+nnoremap <leader>ag :Ag<cr>
 " }}}
