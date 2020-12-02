@@ -87,9 +87,19 @@ export NVM_DIR="$HOME/.nvm"
 # aliasing
 alias ls='ls --color=auto' # ls with typical colorizing
 alias grep='grep --colour=auto' # grep with typical colorizing
-alias ll='ls  -alF'
-alias la='ls -A'
-alias l="ls -CF"
+
+if type 'exa' > /dev/null; then
+    alias lla='exa -ahlg --icons'
+    alias ll='exa -hl --icons'
+    alias la='exa -a --icons'
+    alias l='exa --icons'
+else
+    alias lla='ls -ahlF'
+    alias ll='ls -hlF'
+    alias la='ls -A'
+    alias l="ls -CF"
+fi    
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
