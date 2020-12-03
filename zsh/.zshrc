@@ -89,6 +89,7 @@ alias ls='ls --color=auto' # ls with typical colorizing
 alias grep='grep --colour=auto' # grep with typical colorizing
 
 if type 'exa' > /dev/null; then
+    export EXA_COLORS="uu=38;5;145:gu=38;5;145:un=38;5;203:gn=38;5;203"
     alias lla='exa -ahlg --icons'
     alias ll='exa -hl --icons'
     alias la='exa -a --icons'
