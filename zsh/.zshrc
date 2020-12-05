@@ -16,6 +16,7 @@ plugins=(
     git
     tmux
     mercurial
+    extract
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
