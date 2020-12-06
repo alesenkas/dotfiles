@@ -1,16 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
-export PLN_DIST="/dvp/planning-dist"
-export JBOSS_HOME="$PLN_DIST/jboss-bas-8.2.1.krista44"
 
-# Speeds up load time
-# DISABLE_UPDATE_PROMPT=true
-
-# Colorizing dirs & files
+# colorizing dirs & files
 test -e ~/.dircolors && eval `dircolors ~/.dircolors`
 
 ZSH_THEME="spy_noza"
-# ZSH_THEME="pure"
-# ZSH_THEME="robbyrussell_custom"
 
 plugins=(
     git
@@ -23,36 +16,38 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-fpath=(~/.config/zsh/Completion $fpath)
+# custom completion
+fpath=(~/.config/zsh/completion $fpath)
+setopt complete_aliases
+if [[ -f "~/.config/zsh/work_completion" ]]; then
+    fpath=(~/.config/zsh/work_completion $fpath)
+    compdef _jb jb
+fi
 
-# Lines configured by zsh-newuser-install
+# lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+
+# the following lines were added by compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
-# Extended globbing
-# Examples: 
+
+# extended globbing
+# examples: 
 #   ls *.(sh|config) - all files with extends sh or config
 #   ** - recursive globbing wild-card, ^ - not operation
 setopt extendedglob
 
-# Select autocomplete results with keyboard arrows
+# select autocomplete results with keyboard arrows
 setopt menucomplete
 zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 
 # mistakes correction
 setopt correctall
-
-# custom completion
-setopt complete_aliases
-compdef _jb jb
 
 # fzf configuration
 export FZF_DEFAULT_OPTS="
@@ -69,64 +64,25 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
-# # pure theme clear screen fix
-# prompt_pure_clear_screen() {
-# 	# enable output to terminal
-# 	zle -I
-# 	# clear screen and move cursor to (0, 0)
-# 	print -n '\e[2J\e[0;0H'
-# 	# print preprompt
-# 	prompt_pure_preprompt_render precmd
-# }
-# zle -N clear-screen prompt_pure_clear_screen
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# custom configurations
+ZSH_CONFIG_DIR="$HOME/.config/zsh"
+# local specific config
+[ -f "$ZSH_CONFIG_DIR/local.zsh" ] && source "$ZSH_CONFIG_DIR/local.zsh"
+# functions
+[ -f "$ZSH_CONFIG_DIR/common/functions.zsh" ] && source "$ZSH_CONFIG_DIR/common/functions.zsh"
 # aliasing
-alias ls='ls --color=auto' # ls with typical colorizing
-alias grep='grep --colour=auto' # grep with typical colorizing
-
-if type 'exa' > /dev/null; then
-    export EXA_COLORS="uu=38;5;145:gu=38;5;145:un=38;5;203:gn=38;5;203"
-    alias lla='exa -ahlg --icons'
-    alias ll='exa -hl --icons'
-    alias la='exa -a --icons'
-    alias l='exa --icons'
-else
-    alias lla='ls -ahlF'
-    alias ll='ls -hlF'
-    alias la='ls -A'
-    alias l="ls -CF"
-fi    
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias mvn_prepare='mvn release:prepare --builder singlethreaded -Dit'
-alias mvn_perform='mvn release:perform --builder singlethreaded -Dit'
-alias mvn_version_set='mvn versions:set --builder singlethreaded -Dit -Ddocker-dev -DprocessAllModules=true -DprocessDependencies=true -DgenerateBackupPoms=false'
-alias mvn_version_get='mvn -q -Dexec.executable=echo -Dexec.args='"'"'${project.version}'"'"' --non-recursive exec:exec'
-
-alias dvp="cd /dvp"
-alias src="cd /dvp/Sources"
-alias devtool='bash /dvp/Install/dev-tools-gradle/bin/devtool'
-alias krupd='bash $PLN_DIST/krupd'
-alias jb='jb-auto'
-alias chpasswd='smbpasswd -r krista.ru -U alesenkas'
-
-alias logcl='log-in-colors'
-alias jb.log='logcl -f $JBOSS_HOME/standalone/log/server.log'
-
-alias zshconfig="vim ~/.zshrc"
-
-# proxy
-# export http_proxy='http://<login>:<password>@<proxy>:<port>/'
-# export https_proxy=
-# export ftp_proxy=
+[ -f "$ZSH_CONFIG_DIR/common/aliases.zsh" ] && source "$ZSH_CONFIG_DIR/common/aliases.zsh"
+# work env
+[ -f "$ZSH_CONFIG_DIR/work/env.zsh" ] && source "$ZSH_CONFIG_DIR/work/env.zsh"
+# work functions
+[ -f "$ZSH_CONFIG_DIR/work/functions.zsh" ] && source "$ZSH_CONFIG_DIR/work/functions.zsh"
+# work aliases
+[ -f "$ZSH_CONFIG_DIR/work/aliases.zsh" ] && source "$ZSH_CONFIG_DIR/work/aliases.zsh"
 
 # enable 256 colors support in terminal
 case "$TERM" in
@@ -134,92 +90,3 @@ case "$TERM" in
   'screen') TERM=screen-256color;;
   'Eterm') TERM=Eterm-256color;;
 esac
-
-
-#############################FUNCTIONS##########################################
-log-in-colors() {
-    local red=$(tput bold)$(tput setaf 1)
-    local green=$(tput bold)$(tput setaf 2)
-    local yellow=$(tput bold)$(tput setaf 3)
-    local blue=$(tput bold)$(tput setaf 4)      
-    local off=$(tput sgr0)
-
-    # Make sure formatting is reset
-    echo -ne ${off}
-
-    tail $@ | sed -r "
-      s/.*Replaced deployment.*/$green\\0$off/g
-        s/(.*\\bERROR\\b.*)/$red\\0$off/g
-      s/(.*\\bSEVERE\\b.*)/$red\\0$off/g
-        s/(.*\\bWARN(ING)?\\b.*)/$yellow\\0$off/g
-      s/(.*\\bDEBUG\\b.*)/$blue\\0$off/g        
-      s/\(.*started in.*\)/$green\\0$off/g      
-    "                  
-    # Make sure formatting is reset
-    echo -ne ${off}
-}
-
-jb-auto() {
-    local krupd="$PLN_DIST/krupd" 
-    local cmd
-    cmd=$(bash $krupd -buildfile ~/.krupd.xml -p |
-        awk -F " " 'NF == 1 {print $1}' |
-        fzf --height 40% --query="$1" --exact --reverse --select-1 --exit-0) &&
-    bash $krupd "$cmd"
-}
-
-vag() {
-    local file
-    local line
-
-    read -r file line <<<"$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1, $2}')"
-
-    if [[ -n $file ]]; then
-        vim $file +$line
-    fi    
-}
-
-tns() {
-    if [ -z $1 ];then
-      echo "usage: tns NEW_SESSION_NAME"
-      return 1
-    fi
-
-    session_name=$1
-    tmux new-session -d -s $session_name
-    tmux switch-client -t "$session_name" &>/dev/null || tmux attach-session -t "$session_name"  
-}
-
-tss() {
-    local session
-    session=$(tmux list-sessions -F "#{session_name}" | \
-      fzf --height 40% --reverse --query="$1" --select-1 --exit-0) &&
-    tmux switch-client -t "$session" &>/dev/null || tmux attach-session -t "$session" 
-}
-
-tks() {
-    local session
-    session=$(tmux list-sessions -F "#{session_name}" | \
-      fzf --height 40% --reverse --query="$1" --select-1 --exit-0) &&
-    tmux kill-session -t "$session"
-}
-
-hgf() {
-    local rev
-            
-    rev=$(hg log --color=always --template "{label('custom.rev', rev)} [{label('custom.author', author)}] {splitlines(desc) % '{line} '}\n" "$@" |
-          fzf --ansi --no-sort --reverse --tiebreak=index |
-          awk -F " " '{print $1}')
-
-    if [[ -n $rev ]]; then
-        hg diff -c $rev
-    fi    
-}
-
-hgnv() {
-    hg diff pom.xml | grep -E "\+.*<.*version>" | awk 'BEGIN{FS="<|>"}{print $2 " = " $3}'
-}
-
-pln_db_restore() {
-    pg_restore  --host localhost --port 5432 --username "postgres" --no-owner --no-acl --dbname "planning" --verbose $@
-ifiif}

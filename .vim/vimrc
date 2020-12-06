@@ -15,6 +15,7 @@ endif
 
 call plug#begin(s:dotvim . '/plugged')
 
+Plug 'morhetz/gruvbox'
 Plug 'udalov/javap-vim'
 Plug 'terryma/vim-multiple-cursors'
 
@@ -45,7 +46,7 @@ set nocompatible               " убираем совместимость с Vi
 set nu!                        " нумерация строк
 set backspace=indent,eol,start " baskspace обрабатывает отступы, концы строк
 colorscheme gruvbox            " устанавливаем цветовую схему
-"colorscheme snazzy
+
 set shortmess+=I               " не показывать intro screen
 set cursorline                 " подсветка строки в которой находиться курсор
 set background=dark            " темная цветовая схема
