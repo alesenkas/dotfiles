@@ -20,6 +20,7 @@ Plug 'udalov/javap-vim'
 Plug 'terryma/vim-multiple-cursors'
 
 Plug 'scrooloose/nerdtree'
+Plug 'xuhdev/vim-latex-live-preview'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -111,10 +112,14 @@ nnoremap <f2> :w <cr>
 nnoremap <leader>w :w <cr>
 inoremap <f2> <c-o>:w<cr>
 
-"работа с глобальным clipboard
+" работа с глобальным clipboard
 inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
 vnoremap <C-d> "+d
+
+" latex
+let g:livepreview_previewer = 'evince'
+let g:livepreview_engine = 'xelatex'
 
 " fzf
 nnoremap <c-p> :Files<cr>
