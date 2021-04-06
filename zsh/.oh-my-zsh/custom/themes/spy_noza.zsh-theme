@@ -3,8 +3,8 @@ local ret_status="%(?:%{$fg_bold[green]%}»:%{$fg_bold[red]%}»)"
 
 # show up to 3 parent dirs, except ~, resolve all other dir aliases
 function collapse_pwd {
-    curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
-    relevant_slashes=$(expr $(echo $curr_pwd| tr -d -c /|wc -c) - 1)
+    local curr_pwd=$(pwd | sed -e "s,^$HOME,~,")
+    local relevant_slashes=$(expr $(echo $curr_pwd| tr -d -c /|wc -c) - 1)
     echo $curr_pwd| cut -d / -f$(($relevant_slashes>0?$relevant_slashes:1))-
 }
 
