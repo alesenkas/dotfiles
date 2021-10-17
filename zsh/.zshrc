@@ -49,6 +49,11 @@ zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 # mistakes correction
 setopt correctall
 
+# start ssh-agent
+if type keychain &> /dev/null ; then
+    eval $(keychain --eval --quiet)
+fi    
+
 # fzf configuration
 export FZF_DEFAULT_OPTS="
 --border
@@ -68,6 +73,10 @@ ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # custom configurations
 ZSH_CONFIG_DIR="$HOME/.config/zsh"
@@ -91,6 +100,3 @@ case "$TERM" in
   'Eterm') TERM=Eterm-256color;;
 esac
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
