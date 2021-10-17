@@ -117,6 +117,12 @@ inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
 vnoremap <C-d> "+d
 
+" перемещение строк Ctrl + Shift + [Up|Down]
+nnoremap <C-S-Up> :m-2<CR>
+nnoremap <C-S-Down> :m+<CR>
+inoremap <C-S-Up> <Esc>:m-2<CR>
+inoremap <C-S-Down> <Esc>:m+<CR>
+
 " latex
 let g:livepreview_previewer = 'evince'
 let g:livepreview_engine = 'xelatex'
