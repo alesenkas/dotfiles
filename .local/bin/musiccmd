@@ -1,0 +1,21 @@
+#!/bin/sh
+
+flag=$1
+
+case $flag in
+    -u)
+        cmus-remote -u || dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+        ;;
+    -n)
+        cmus-remote -n || dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next 
+        ;;
+    -r)
+        cmus-remote -r || dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+        ;;
+    -s)
+        cmus-remote -s || dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+        ;;                
+    *)
+        echo "Unknown command"
+        ;;    
+esac
