@@ -50,8 +50,8 @@ zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 setopt correctall
 
 # start ssh-agent
-if type keychain &> /dev/null ; then
-    eval $(keychain --eval --quiet)
+if [[ -x "$(command -v keychain)" ]]; then
+    eval $(keychain --eval --quiet github)
 fi    
 
 # fzf configuration
