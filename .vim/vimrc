@@ -47,7 +47,7 @@ call plug#end()
 
 set nocompatible               " убираем совместимость с Vi
 set nu!                        " нумерация строк
-set backspace=indent,eol,start " baskspace обрабатывает отступы, концы строк
+set backspace=indent,eol,start " baсkspace обрабатывает отступы, концы строк
 colorscheme gruvbox            " устанавливаем цветовую схему
 
 set shortmess+=I               " не показывать intro screen
@@ -77,9 +77,9 @@ set fileformat=unix
 set fencs=utf-8,cp1251,koi8-r,cp866
 
 " Поиск
-set incsearch  " при поиске перескакивать на найденный текс в процессе набора строки
+set incsearch  " при поиске перескакивать на найденный текст в процессе набора строки
 set hlsearch   " включаем подсветку выражения, которое ищется в тексте
-set ignorecase " игнориоровать регистр букв при поиске
+set ignorecase " игнорировать регистр букв при поиске
 set smartcase  " перекрываем игнорирование регистра, если в строке есть символы в uppercase
 
 " Табуляция
