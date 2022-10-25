@@ -76,6 +76,12 @@ set fileformat=unix
 " варианты кодировки файла по умолчанию (все файлы по умолчанию сохраняются в этой кодировке)
 set fencs=utf-8,cp1251,koi8-r,cp866
 
+" проверка орфографии
+set spelllang=en_us,ru
+set spell
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=red 
+
 " Поиск
 set incsearch  " при поиске перескакивать на найденный текст в процессе набора строки
 set hlsearch   " включаем подсветку выражения, которое ищется в тексте
