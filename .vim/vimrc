@@ -38,7 +38,7 @@ let g:lightline = {
       \             [ 'readonly', 'relativepath', 'modified' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \              [ 'spell', 'fileformat', 'fileencoding', 'filetype' ] ]
       \ }
       \ }
       
