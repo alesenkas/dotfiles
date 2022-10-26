@@ -47,7 +47,7 @@ call plug#end()
 
 set nocompatible               " убираем совместимость с Vi
 set nu!                        " нумерация строк
-set backspace=indent,eol,start " baсkspace обрабатывает отступы, концы строк
+set backspace=indent,eol,start " backspace обрабатывает отступы, концы строк
 colorscheme gruvbox            " устанавливаем цветовую схему
 
 set shortmess+=I               " не показывать intro screen
@@ -78,7 +78,7 @@ set fencs=utf-8,cp1251,koi8-r,cp866
 
 " проверка орфографии
 set spelllang=en_us,ru
-set spell
+set nospell
 hi clear SpellBad
 hi SpellBad cterm=underline,bold ctermfg=red 
 
@@ -145,4 +145,9 @@ nnoremap <c-p> :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>l :Lines<cr>
 nnoremap <leader>ag :Ag<cr>
+
+" spell
+nnoremap <f10> :setlocal spell!<cr> 
+inoremap <f10> <c-o>:setlocal spell!<cr>
+
 " }}}
