@@ -12,7 +12,11 @@ else
     alias ll='ls -hlF'
     alias la='ls -A'
     alias l="ls -CF"
-fi    
+fi
+
+if type 'batcat' > /dev/null; then
+    alias bat='batcat'
+fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
