@@ -1,0 +1,25 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "gruvbox.sublime-theme",
+	"color_scheme": "gruvbox (Dark) (Hard) NDC.sublime-color-scheme",
+    "gruvbox_autocomplete_border": true,
+    "gruvbox_statusbar_xs": true,
+    "gruvbox_statusbar_button_xxs": true,
+    "gruvbox_tabs_xxs": true,
+    "gruvbox_underline_modified_tabs": true, 
+    "gruvbox_iconset_spacegray": true,
+	"font_face": "JetBrainsMono Nerd Font Regular",
+	"font_options": ["dlig"],
+	"font_size": 12,
+	"translate_tabs_to_spaces": true,
+	"dictionary": ["Packages/Language - English/en_US.dic", "Dictionaries/ru_RU.dic"],
+	"draw_minimap_border": true,
+	"highlight_line": true,
+	"caret_style": "smooth",
+	"caret_extra_top": 0,
+	"caret_extra_bottom": 0,
+	"caret_extra_width": 1,
+}
