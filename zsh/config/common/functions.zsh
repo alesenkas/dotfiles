@@ -61,8 +61,28 @@ tks() {
     tmux kill-session -t "$session"
 }
 
+############## VCS ##############
 
-############## HG ##############
+chstat() {
+    for dir in *(/); do
+        if [[ -d "$dir/.hg" ]]; then
+            ch=$(hg status $dir | wc -c)
+            if [[ $ch > 0 ]]; then
+                echo $fg_bold[yellow]"hg: "$fg_bold[green]$dir$reset_color
+                hg status $dir | cat
+                echo ""
+            fi    
+        fi
+        if [[ -d "$dir/.git" ]]; then
+            ch=$(git -C $dir status --porcelain | wc -c)
+            if [[ $ch > 0 ]]; then
+                echo $fg_bold[yellow]"git: "$fg_bold[green]$dir$reset_color
+                git -C $dir status --short
+                echo ""
+            fi    
+        fi    
+    done    
+}
 
 hgf() {
     local rev
