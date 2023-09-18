@@ -7,15 +7,18 @@
     default = simple
 [core]
     pager = delta
-
 [interactive]
     diffFilter = delta --color-only
-
 [delta]
     line-numbers = true
     file-decoration-style =
     hunk-header-decoration-style =
     syntax-theme = gruvbox-dark
-
 [pull]
     ff = only
+[merge]
+	conflictstyle = diff3
+[mergetool "idea"]
+	cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	trustExitCode = true
+
