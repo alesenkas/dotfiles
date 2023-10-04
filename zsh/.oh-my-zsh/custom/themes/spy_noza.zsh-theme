@@ -12,12 +12,12 @@ PROMPT='%{${fg_bold[cyan]}%}$(collapse_pwd) $(git_prompt_info)$(hg_prompt_info)$
 
 # RPS1="${ret_status}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}[ git:%{$fg[magenta]%}  "
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}[ git:%{$fg[magenta]%} "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[blue]%}] %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}󰕚 %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 
-ZSH_THEME_HG_PROMPT_PREFIX="%{$fg_bold[blue]%}[󰴻 hg:%{$fg[magenta]%}  "
+ZSH_THEME_HG_PROMPT_PREFIX="%{$fg_bold[blue]%}[󰴻 hg:%{$fg[magenta]%} "
 ZSH_THEME_HG_PROMPT_SUFFIX="%{$fg_bold[blue]%}] %{$reset_color%}"
 ZSH_THEME_HG_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}󰕚 %{$reset_color%}"   
 ZSH_THEME_HG_PROMPT_CLEAN="%{$fg[blue]%}"
