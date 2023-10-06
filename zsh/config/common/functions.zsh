@@ -99,7 +99,7 @@ hgf() {
 gitf() {
     local commit
     commit=$(git log --graph --color=always --pretty="format:%C(yellow)%h%C(reset) [%C(#06989A)%an%C(reset)%C(#555753)..%as%C(reset)] %s" "$@" |
-          fzf --ansi --no-sort --reverse --tiebreak=index |
+        fzf --ansi --no-sort --reverse --tiebreak=index --preview="(echo {} | grep -o '[a-f0-9]\{7\}') && (echo {} | grep -o '[a-f0-9]\{7\}' | xargs git show --name-status | batcat --color=always)" |
           grep -o '[a-f0-9]\{7\}' | 
           head -1)
 
