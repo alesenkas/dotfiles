@@ -95,3 +95,16 @@ hgf() {
         hg diff -c $rev
     fi    
 }
+
+gitf() {
+    local commit
+    commit=$(git log --graph --color=always --pretty="format:%C(yellow)%h%C(reset) [%C(#06989A)%an%C(reset)%C(#555753)..%as%C(reset)] %s" "$@" |
+          fzf --ansi --no-sort --reverse --tiebreak=index |
+          grep -o '[a-f0-9]\{7\}' | 
+          head -1)
+
+    if [[ -n $commit ]]; then
+        git show $commit
+    fi
+}
+
