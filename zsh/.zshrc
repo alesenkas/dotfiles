@@ -10,6 +10,7 @@ plugins=(
     tmux
     mercurial
     extract
+    clipboard
     zsh-autosuggestions
     zsh-syntax-highlighting
 )

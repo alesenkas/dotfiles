@@ -63,6 +63,14 @@ tks() {
 
 ############## VCS ##############
 
+start_thg() {
+    if [[ $(ps|grep "thg") ]]; then
+        \thg
+    else
+        ((\thg>/dev/null 2&>/dev/null) &)
+    fi
+}
+
 chstat() {
     for dir in *(/); do
         if [[ -d "$dir/.hg" ]]; then

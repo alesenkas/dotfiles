@@ -1,5 +1,5 @@
 export PLN_DIST="/dvp/planning-dist"
-export JBOSS_HOME="$PLN_DIST/jboss-bas-8.2.1.krista44"
+export JBOSS_HOME="$PLN_DIST/wildfly-24.0.1.Final"
 export WORK_DIR_ROOT="/dvp"
 
 # proxy

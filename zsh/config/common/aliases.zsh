@@ -18,6 +18,14 @@ if type 'batcat' > /dev/null; then
     alias bat='batcat'
 fi
 
+if type '"/opt/sublime_merge/sublime_merge' > /dev/null; then
+    alias sm="/opt/sublime_merge/sublime_merge"
+fi
+
+if type \thg > /dev/null; then
+    alias thg='start_thg'
+fi
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
