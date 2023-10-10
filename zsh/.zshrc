@@ -20,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 # custom completion
 fpath=(~/.config/zsh/completion $fpath)
 setopt complete_aliases
-if [[ -f "~/.config/zsh/work_completion" ]]; then
+if [[ -d "$HOME/.config/zsh/work_completion" ]]; then
     fpath=(~/.config/zsh/work_completion $fpath)
     compdef _jb jb
 fi
