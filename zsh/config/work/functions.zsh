@@ -19,4 +19,4 @@ hgnv() {
 
 pln_db_restore() {
     pg_restore  --host localhost --port 5432 --username "postgres" --no-owner --no-acl --dbname "planning" --verbose $@
-ifiif}
+}
