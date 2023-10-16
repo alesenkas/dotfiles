@@ -47,6 +47,7 @@ call plug#end()
 
 set nocompatible               " убираем совместимость с Vi
 set nu!                        " нумерация строк
+set number relativenumber      " относительная нумерация строк
 set backspace=indent,eol,start " backspace обрабатывает отступы, концы строк
 colorscheme gruvbox            " устанавливаем цветовую схему
 
