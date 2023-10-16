@@ -142,10 +142,11 @@ let g:livepreview_previewer = 'evince'
 let g:livepreview_engine = 'xelatex'
 
 " fzf
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore .hg -g ""'
 nnoremap <c-p> :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>l :Lines<cr>
-nnoremap <leader>ag :Ag<cr>
+nnoremap <leader>f :Ag<cr>
 
 " spell
 nnoremap <f10> :setlocal spell!<cr> 
