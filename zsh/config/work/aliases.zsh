@@ -5,4 +5,4 @@ alias krupd='bash $PLN_DIST/krupd'
 alias jb='jb-auto'
 alias chpasswd='smbpasswd -r krista.ru -U alesenkas'
 alias wenv="vim ~/.config/zsh/work/env.zsh"
-alias jb.log='logcl -f $JBOSS_HOME/standalone/log/server.log'
+alias jb.log='logcl -F $JBOSS_HOME/standalone/log/server.log'
