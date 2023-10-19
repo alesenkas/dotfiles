@@ -1,7 +1,7 @@
 ls-visible() {
     zle kill-whole-line
     echo ""
-    exa -hgl --icons
+    eza -hgl --icons
     zle accept-line
 }
 zle -N ls-visible
@@ -9,7 +9,7 @@ zle -N ls-visible
 tree-visible-2() {
     zle kill-whole-line
     echo ""
-    exa -T -L2 --icons
+    eza -T -L2 --icons
     zle accept-line
 }
 zle -N tree-visible-2
@@ -17,7 +17,7 @@ zle -N tree-visible-2
 ls-all() {
     zle kill-whole-line
     echo ""
-    exa -ahgl --icons    
+    eza -ahgl --icons    
     zle accept-line
 }
 zle -N ls-all
@@ -25,7 +25,7 @@ zle -N ls-all
 tree-all-2() {
     zle kill-whole-line
     echo ""
-    exa -aT -L2 --icons
+    eza -aT -L2 --icons
     zle accept-line
 }
 zle -N tree-all-2
