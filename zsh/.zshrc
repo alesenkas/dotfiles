@@ -11,6 +11,7 @@ plugins=(
     mercurial
     extract
     clipboard
+    rust
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
