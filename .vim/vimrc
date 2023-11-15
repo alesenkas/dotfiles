@@ -18,6 +18,7 @@ call plug#begin(s:dotvim . '/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'udalov/javap-vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'powerman/vim-plugin-ruscmd'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
