@@ -18,5 +18,5 @@ hgnv() {
 ############## POSTGRES ##############
 
 pln_db_restore() {
-    pg_restore  --host localhost --port 5432 --username "postgres" --no-owner --no-acl --dbname "planning" --verbose $@
+    pg_restore  --host localhost --port 5432 --username "sysdba" --no-owner --no-acl --dbname "planning" --verbose $@
 }
