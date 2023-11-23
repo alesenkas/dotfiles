@@ -120,7 +120,14 @@ nnoremap <silent> <cr> :nohlsearch<cr><cr>
 nnoremap <silent> <leader>n :nohlsearch<cr>
 
 " NERDTree
-map<F12> :NERDTreeToggle %<cr> 
+nmap <silent> <F12> :call NERDTreeToogleInCurBuf()<cr>
+function! NERDTreeToogleInCurBuf()
+    if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+        exe ":NERDTreeClose"
+    else
+        exe ":NERDTreeFind"
+    endif
+endfunction
 
 " сохранение файла по F2
 nnoremap <f2> :w <cr>
