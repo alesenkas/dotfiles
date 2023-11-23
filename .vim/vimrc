@@ -120,7 +120,7 @@ nnoremap <silent> <cr> :nohlsearch<cr><cr>
 nnoremap <silent> <leader>n :nohlsearch<cr>
 
 " NERDTree
-map<F12> :NERDTreeToggle <cr> 
+map<F12> :NERDTreeToggle %<cr> 
 
 " сохранение файла по F2
 nnoremap <f2> :w <cr>
