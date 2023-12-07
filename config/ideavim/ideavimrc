@@ -6,6 +6,7 @@ set incsearch
 set smartcase
 set idearefactormode=keep
 set clipboard+=ideaput
+set clipboard+=unnamed
 
 set ideajoin
 set multiple-cursors
@@ -15,14 +16,13 @@ set commentary
 set NERDTree
 
 " system clipboard
-" changed from "+ to "* in version 2.5.0
-vmap <leader>y "*y
-vmap <leader>d "*d
-nmap <leader>y "*yy
-nmap <leader>p "*p
-nmap <leader>P "*P
-vmap <leader>p "*p
-vmap <leader>P "*P
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>y "+yy
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
 
 nnoremap <C-s-j> :m +1<CR>
 nnoremap <C-s-k> :m -2<CR>
