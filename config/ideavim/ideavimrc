@@ -31,6 +31,7 @@ inoremap <C-s-k> <Esc>:m -2<CR>gi
 
 nmap <leader>e <action>(RecentFiles)
 nmap <leader>n <action>(GotoClass)
+nmap <leader>q <action>(QuickJavaDoc)
 nmap <C-o> <action>(Back)
 nmap <C-i> <action>(Forward)
 
