@@ -14,6 +14,10 @@ else
     alias l="ls -CF"
 fi
 
+if type 'nvim' > /dev/null; then
+    alias vim='nvim'
+fi
+
 if type 'batcat' > /dev/null; then
     alias bat='batcat'
 fi
