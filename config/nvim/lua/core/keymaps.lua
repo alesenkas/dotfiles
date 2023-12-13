@@ -13,6 +13,7 @@ keymap.set("n", "<C-k>", ":m -2<CR>", { noremap = true, silent = true })
 
 -- file operations
 keymap.set("n" , "<C-s>", ":w<CR>") -- save
+keymap.set("i", "<C-s>", "<C-o>:w<CR>") -- save (insert mode)
 keymap.set("n", "<C-q>", ":q<CR>") -- quit
 
 -- system clipboard (required installed xclip)

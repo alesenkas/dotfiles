@@ -33,14 +33,15 @@ opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- asumes case sensetive search when using mixed case
 
 -- suppot russian keymap
-opt.keymap = "russian-jcukenwin"
-vim.opt.iminsert = 0
-vim.opt.imsearch = -1
+opt.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+-- opt.keymap = "russian-jcukenwin"
+-- opt.iminsert = 0
+-- opt.imsearch = -1
 
 -- undo files
 local undo_dir = vim.fn.stdpath('data') .. '/undodir'
 if vim.fn.isdirectory(undo_dir) == 0 then
-  vim.fn.mkdir(undo_dir, 0700)
+  vim.fn.mkdir(undo_dir, "0700")
 end
-vim.opt.undodir = undo_dir
-vim.opt.undofile = true
+opt.undodir = undo_dir
+opt.undofile = true
