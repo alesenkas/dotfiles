@@ -9,12 +9,17 @@ return {
             }
         },
         keys = {
-            {'<leader>n', function() require 'telescope.builtin'.find_files() end },
-            {'<leader>e', function() require 'telescope.builtin'.buffers() end },
+            { '<leader>n',  function() require 'telescope.builtin'.find_files() end },
+            { '<leader>e',  function() require 'telescope.builtin'.buffers() end },
             -- live grep required installed ripgrep
-            {'<leader>lg', function() require 'telescope.builtin'.live_grep() end },
+            { '<leader>lg', function() require 'telescope.builtin'.live_grep() end },
         },
         opts = {
+            defaults = {
+                file_ignore_patterns = {
+                    "^.*%.git.*$"
+                },
+            },
             pickers = {
                 find_files = {
                     hidden = true
