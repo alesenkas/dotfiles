@@ -13,6 +13,13 @@ return {
             {'<leader>e', function() require 'telescope.builtin'.buffers() end },
             -- live grep required installed ripgrep
             {'<leader>lg', function() require 'telescope.builtin'.live_grep() end },
-        }
+        },
+        opts = {
+            pickers = {
+                find_files = {
+                    hidden = true
+                },
+            },
+        },
     }
 }

@@ -2,6 +2,7 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
+        event = { 'BufReadPost', 'BufNewFile' },
         dependencies = {
             { 'nvim-treesitter/nvim-treesitter-textobjects' }
         },
@@ -9,7 +10,9 @@ return {
             local configs = require('nvim-treesitter.configs')
 
             configs.setup({
-                ensure_installed = { 'java', 'lua', 'rust', 'javascript', 'html', 'vim' },
+                ensure_installed = { 
+                    'java', 'kotlin', 'lua', 'rust', 'javascript', 'typescript', 'html', 'json', 'yaml', 'vim' 
+                },
                 higlight = {
                     enabled = true,
                     disable = {},
@@ -38,7 +41,7 @@ return {
                         goto_next_start = {
                             [']]'] = '@function.outer',
                         },
-                        goto_previos_start = {
+                        goto_previous_start = {
                             ['[['] = '@function.outer',
                         },
                     },
