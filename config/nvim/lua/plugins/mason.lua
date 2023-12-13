@@ -2,10 +2,10 @@ return {
     {
         'williamboman/mason.nvim',
         dependencies = {
-              "williamboman/mason-lspconfig.nvim",
-              "WhoIsSethDaniel/mason-tool-installer.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
         },
-        config = function() 
+        config = function()
             local mason = require 'mason'
             mason.setup({
                 ui = {
@@ -20,7 +20,7 @@ return {
             local lspconfig = require 'mason-lspconfig'
             lspconfig.setup({
                 ensure_installed = {
-                   "lua_ls" 
+                    "lua_ls"
                 }
             })
         end

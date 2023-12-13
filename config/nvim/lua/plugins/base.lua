@@ -3,4 +3,4 @@ return {
     { 'rcarriga/nvim-notify' },
     { 'tpope/vim-commentary' },
     { 'tpope/vim-surround' },
-} 
+}
