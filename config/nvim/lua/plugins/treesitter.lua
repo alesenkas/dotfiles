@@ -6,12 +6,12 @@ return {
         dependencies = {
             { 'nvim-treesitter/nvim-treesitter-textobjects' }
         },
-        config = function () 
+        config = function()
             local configs = require('nvim-treesitter.configs')
 
             configs.setup({
-                ensure_installed = { 
-                    'java', 'kotlin', 'lua', 'rust', 'javascript', 'typescript', 'html', 'json', 'yaml', 'vim' 
+                ensure_installed = {
+                    'java', 'kotlin', 'lua', 'rust', 'javascript', 'typescript', 'html', 'json', 'yaml', 'vim'
                 },
                 higlight = {
                     enabled = true,
@@ -24,7 +24,7 @@ return {
                             ['af'] = '@function.outer',
                             ['if'] = '@function.inner',
                             ['ac'] = '@class.outer',
-                            ['ic'] = '@class.inner', 
+                            ['ic'] = '@class.inner',
                         }
                     },
                     swap = {

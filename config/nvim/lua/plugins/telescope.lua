@@ -13,9 +13,19 @@ return {
             { '<leader>e',  function() require 'telescope.builtin'.buffers() end },
             -- live grep required installed ripgrep
             { '<leader>lg', function() require 'telescope.builtin'.live_grep() end },
+            -- git
+            { '<leader>gf', function() require 'telescope.builtin'.git_files() end },
+            { '<leader>gc', function() require 'telescope.builtin'.git_commits() end },
         },
         opts = {
             defaults = {
+                layout_strategy = 'vertical',
+                mappings = {
+                    i = {
+                        ['<C-j>'] = require 'telescope.actions'.move_selection_next,
+                        ['<C-k>'] = require 'telescope.actions'.move_selection_previous,
+                    }
+                },
                 file_ignore_patterns = {
                     "^.*%.git.*$"
                 },

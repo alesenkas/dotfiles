@@ -15,7 +15,16 @@ return {
 
                 -- formatting
                 if client.server_capabilities.documentFormattingProvider then
-                   keymap.set('n', '<leader>f', function () vim.lsp.buf.format{ async = true} end, opts)
+                    keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, opts)
+                    -- autofortmat on save
+                    vim.api.nvim_create_autocmd('BufWritePre', {
+                        buffer = bufnr,
+                        callback = function() vim.lsp.buf.format { async = false } end
+                    })
+                end
+                -- formatting selection
+                if client.server_capabilities.documentRangeFormattingProvider then
+                    keymap.set('v', '<leader>f', vim.lsp.buf.format, opts)
                 end
             end
 

@@ -12,9 +12,11 @@ return {
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-emoji',
             'saadparwaiz1/cmp_luasnip',
+            'onsails/lspkind.nvim', -- icons
         },
         opts = function()
             local cmp = require 'cmp'
+            local lspkind = require 'lspkind'
             return {
                 snippet = {
                     expand = function(args)
@@ -24,6 +26,13 @@ return {
                 window = {
                     completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
+                },
+                formatting = {
+                    format = lspkind.cmp_format({
+                        mode = 'symbol', -- show only symbol annotations
+                        maxwidth = 50,   -- will not show more than 50 characters
+                        ellispsis_char = '...'
+                    })
                 },
                 mapping = cmp.mapping.preset.insert({
                     ['<c-j>'] = cmp.mapping.select_next_item(),
