@@ -13,9 +13,12 @@ return {
             { '<leader>e',  function() require 'telescope.builtin'.buffers() end },
             -- live grep required installed ripgrep
             { '<leader>lg', function() require 'telescope.builtin'.live_grep() end },
+            { '<A-`>',      function() require 'telescope.builtin'.commands() end },
             -- git
             { '<leader>gf', function() require 'telescope.builtin'.git_files() end },
             { '<leader>gc', function() require 'telescope.builtin'.git_commits() end },
+            { '<leader>gb', function() require 'telescope.builtin'.git_branches() end },
+            { '<leader>gs', function() require 'telescope.builtin'.git_status() end },
         },
         opts = {
             defaults = {

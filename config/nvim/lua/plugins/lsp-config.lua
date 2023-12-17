@@ -10,13 +10,14 @@ return {
             local on_attach = function(client, bufnr)
                 local opts = { noremap = true, silent = true, buffer = bufnr }
                 local keymap = vim.keymap
-                -- TODO keymaps
 
+                -- TODO keymaps
+                keymap.set('n', '<leader>a', vim.lsp.buf.code_action, opts)
 
                 -- formatting
                 if client.server_capabilities.documentFormattingProvider then
                     keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, opts)
-                    -- autofortmat on save
+                    -- autoformat on save
                     vim.api.nvim_create_autocmd('BufWritePre', {
                         buffer = bufnr,
                         callback = function() vim.lsp.buf.format { async = false } end
@@ -30,6 +31,11 @@ return {
 
             local lspconfig = require 'lspconfig'
             local capabilities = require 'cmp_nvim_lsp'.default_capabilities()
+
+            lspconfig['rust_analyzer'].setup({
+                capabilities = capabilities,
+                on_attach = on_attach,
+            })
 
             lspconfig['lua_ls'].setup({
                 capabilities = capabilities,
