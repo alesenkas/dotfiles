@@ -4,18 +4,18 @@ flag=$1
 
 case $flag in
     -u)
-        cmus-remote -u || dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+        playerctl --player=cmus,%any play-pause
         ;;
     -n)
-        cmus-remote -n || dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next 
+        playerctl --player=cmus,%any next
         ;;
     -r)
-        cmus-remote -r || dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+        playerctl --player=cmus,%any previous
         ;;
     -s)
-        cmus-remote -s || dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
-        ;;                
+        playerctl --player=cmus,%any stop
+        ;;
     *)
         echo "Unknown command"
-        ;;    
+        ;;
 esac
