@@ -6,6 +6,7 @@ test -e ~/.dircolors && eval `dircolors ~/.dircolors`
 ZSH_THEME="spy_noza"
 
 plugins=(
+    z
     git
     tmux
     mercurial
@@ -39,7 +40,7 @@ compinit
 
 
 # extended globbing
-# examples: 
+# examples:
 #   ls *.(sh|config) - all files with extends sh or config
 #   ** - recursive globbing wild-card, ^ - not operation
 setopt extendedglob
@@ -54,7 +55,7 @@ setopt correctall
 # start ssh-agent
 if [[ -x "$(command -v keychain)" ]]; then
     eval $(keychain --eval --quiet github)
-fi    
+fi
 
 # fzf configuration
 export FZF_DEFAULT_OPTS="
