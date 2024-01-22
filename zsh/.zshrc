@@ -6,7 +6,6 @@ test -e ~/.dircolors && eval `dircolors ~/.dircolors`
 ZSH_THEME="spy_noza"
 
 plugins=(
-    z
     git
     tmux
     mercurial
@@ -103,3 +102,5 @@ case "$TERM" in
   'Eterm') TERM=Eterm-256color;;
 esac
 
+# zoxide
+eval "$(zoxide init zsh)"
