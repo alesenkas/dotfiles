@@ -80,6 +80,11 @@ export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# zoxide
+if type 'zoxide' > /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
 # custom configurations
 ZSH_CONFIG_DIR="$HOME/.config/zsh"
 # local specific config
@@ -102,5 +107,3 @@ case "$TERM" in
   'Eterm') TERM=Eterm-256color;;
 esac
 
-# zoxide
-eval "$(zoxide init zsh)"
