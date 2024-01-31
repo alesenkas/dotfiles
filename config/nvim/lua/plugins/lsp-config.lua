@@ -12,7 +12,12 @@ return {
                 local keymap = vim.keymap
 
                 -- TODO keymaps
-                keymap.set('n', '<leader>a', vim.lsp.buf.code_action, opts)
+                keymap.set('n', 'gd', vim.lsp.buf.type_definition, opts)
+                keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+                keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+                keymap.set('n', '<leader>q', vim.lsp.buf.hover, opts)
+                keymap.set('n', '<c-p>', vim.lsp.buf.signature_help, opts)
+                keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 
                 -- formatting
                 if client.server_capabilities.documentFormattingProvider then
