@@ -1,5 +1,5 @@
 [user]
-    name = alesenkas
+	name = alesenkas
     email = InfHungry@gmail.com
 [color]
     ui = true
@@ -21,4 +21,6 @@
 [mergetool "idea"]
 	cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 	trustExitCode = true
-
+[rerere]
+	enabled = true
+	autoUpdate = true
