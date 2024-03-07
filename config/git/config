@@ -17,7 +17,7 @@
 [pull]
     ff = only
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 [mergetool "idea"]
 	cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 	trustExitCode = true
