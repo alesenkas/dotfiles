@@ -17,6 +17,7 @@ return {
                 keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
                 keymap.set('n', '<leader>q', vim.lsp.buf.hover, opts)
                 keymap.set('n', '<c-p>', vim.lsp.buf.signature_help, opts)
+                keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
                 keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 
                 -- formatting
@@ -60,6 +61,8 @@ return {
                     }
                 }
             })
+
+            lspconfig["tsserver"].setup({})
         end
     }
 }
