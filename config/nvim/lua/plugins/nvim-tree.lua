@@ -10,13 +10,28 @@ return {
             vim.g.loaded_netrwPlugin = 1
 
             nvimtree.setup({
+                diagnostics = {
+                    enable = true
+                },
+                filters = {
+                    dotfiles = false
+                },
+                git = {
+                    enable = true,
+                    ignore = false,
+                    timeout = 500
+                },
                 view = {
                     width = 30,
-                    relativenumber = true
+                    side = 'left',
+                    preserve_window_proportions = false,
+                    number = false,
+                    relativenumber = false,
+                    signcolumn = 'yes'
                 }
             })
 
-            vim.keymap.set("n", "<F12>", "<cmd>NvimTreeFindFileToggle<CR>")
+            vim.keymap.set("n", "<M-1>", "<cmd>NvimTreeFindFileToggle<CR>")
         end
     }
 }
