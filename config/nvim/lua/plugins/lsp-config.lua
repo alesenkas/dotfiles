@@ -62,7 +62,18 @@ return {
                 }
             })
 
-            lspconfig["tsserver"].setup({})
+            local frontend_servers = {
+                'tsserver',
+                'cssls',
+                'stylelint_lsp',
+                'html'
+            }
+            for _, server_name in ipairs(frontend_servers) do
+                lspconfig[server_name].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach
+                })
+            end
         end
     }
 }

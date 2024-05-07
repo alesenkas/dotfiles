@@ -22,6 +22,10 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "rust_analyzer",
+                    "tsserver",
+                    "cssls",
+                    "stylelint_lsp",
+                    "html"
                 }
             })
         end
