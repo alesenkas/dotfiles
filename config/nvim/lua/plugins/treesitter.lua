@@ -11,7 +11,8 @@ return {
 
             configs.setup({
                 ensure_installed = {
-                    'java', 'kotlin', 'lua', 'rust', 'javascript', 'typescript', 'html', 'json', 'yaml', 'vim'
+                    'java', 'kotlin', 'lua', 'rust', 'javascript', 'typescript', 'html', 'css',
+                    'json', 'yaml', 'vim'
                 },
                 higlight = {
                     enabled = true,

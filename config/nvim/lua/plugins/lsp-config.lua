@@ -20,6 +20,15 @@ return {
                 keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
                 keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 
+                -- in dropdown
+                local tel_builtin = require 'telescope.builtin'
+                local tel_themes = require 'telescope.themes'
+                keymap.set('n', 'gr', function() tel_builtin.lsp_references(tel_themes.get_dropdown {}) end, opts)
+
+                -- diagnostic
+                keymap.set('n', '<F2>', vim.diagnostic.goto_next, opts)
+                keymap.set('n', '<S-F2>', vim.diagnostic.goto_prev, opts)
+
                 -- formatting
                 if client.server_capabilities.documentFormattingProvider then
                     keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, opts)
