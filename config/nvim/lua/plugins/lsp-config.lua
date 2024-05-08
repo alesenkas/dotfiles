@@ -24,6 +24,8 @@ return {
                 local tel_builtin = require 'telescope.builtin'
                 local tel_themes = require 'telescope.themes'
                 keymap.set('n', 'gr', function() tel_builtin.lsp_references(tel_themes.get_dropdown {}) end, opts)
+                keymap.set('n', 'gS', function() tel_builtin.lsp_workspace_symbols(tel_themes.get_dropdown {}) end, opts)
+                keymap.set('n', 'gs', function() tel_builtin.lsp_document_symbols(tel_themes.get_dropdown {}) end, opts)
 
                 -- diagnostic
                 keymap.set('n', '<F2>', vim.diagnostic.goto_next, opts)
@@ -47,10 +49,19 @@ return {
             local lspconfig = require 'lspconfig'
             local capabilities = require 'cmp_nvim_lsp'.default_capabilities()
 
-            lspconfig['rust_analyzer'].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
+            local def_config_servers = {
+                'rust_analyzer',
+                'tsserver',
+                'cssls',
+                'stylelint_lsp',
+                'html'
+            }
+            for _, server_name in ipairs(def_config_servers) do
+                lspconfig[server_name].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach
+                })
+            end
 
             lspconfig['lua_ls'].setup({
                 capabilities = capabilities,
@@ -70,19 +81,6 @@ return {
                     }
                 }
             })
-
-            local frontend_servers = {
-                'tsserver',
-                'cssls',
-                'stylelint_lsp',
-                'html'
-            }
-            for _, server_name in ipairs(frontend_servers) do
-                lspconfig[server_name].setup({
-                    capabilities = capabilities,
-                    on_attach = on_attach
-                })
-            end
         end
     }
 }

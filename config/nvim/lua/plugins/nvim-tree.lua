@@ -22,9 +22,9 @@ return {
                     timeout = 500
                 },
                 view = {
-                    width = 30,
+                    adaptive_size = true,
+                    width = 40,
                     side = 'left',
-                    preserve_window_proportions = false,
                     number = false,
                     relativenumber = false,
                     signcolumn = 'yes'

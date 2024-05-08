@@ -16,7 +16,9 @@ return {
                 },
                 higlight = {
                     enabled = true,
+                    extended_mode = true,
                     disable = {},
+                    additional_vim_regex_highlighting = false,
                 },
                 textobjects = {
                     select = {
