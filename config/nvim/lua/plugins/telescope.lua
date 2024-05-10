@@ -3,10 +3,8 @@ return {
         'nvim-telescope/telescope.nvim',
         cmd = 'Telescope',
         dependencies = {
-            {
-                'nvim-telescope/telescope-fzy-native.nvim',
-                config = function() require 'telescope'.load_extension 'fzy_native' end,
-            }
+            { 'nvim-telescope/telescope-fzy-native.nvim' },
+            { 'nvim-telescope/telescope-ui-select.nvim' }
         },
         keys = {
             { '<leader>n',  function() require 'telescope.builtin'.find_files() end },
@@ -33,11 +31,22 @@ return {
                     "^.*%.git.*$"
                 },
             },
+            extensions = {
+                ['ui-select'] = {
+                    require 'telescope.themes'.get_dropdown {}
+                }
+            },
             pickers = {
                 find_files = {
                     hidden = true
                 },
             },
         },
+        config = function(_, opts)
+            local telescope = require 'telescope'
+            telescope.setup(opts)
+            telescope.load_extension 'fzy_native'
+            telescope.load_extension 'ui-select'
+        end
     }
 }

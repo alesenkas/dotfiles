@@ -31,7 +31,8 @@ return {
                 }
             })
 
-            vim.keymap.set("n", "<M-1>", "<cmd>NvimTreeFindFileToggle<CR>")
+            vim.keymap.set("n", "<M-1>", "<cmd>NvimTreeFindFileToggle<CR>")     -- neovide
+            vim.keymap.set("n", "<leader>1", "<cmd>NvimTreeFindFileToggle<CR>") -- terminal
         end
     }
 }

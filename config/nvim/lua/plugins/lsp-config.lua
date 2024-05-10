@@ -12,9 +12,8 @@ return {
                 local keymap = vim.keymap
 
                 -- TODO keymaps
-                keymap.set('n', 'gd', vim.lsp.buf.type_definition, opts)
-                keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-                keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+                keymap.set('n', '<c-b>', vim.lsp.buf.definition, opts)
+                keymap.set('n', 'gd', vim.lsp.buf.declaration, opts)
                 keymap.set('n', '<leader>q', vim.lsp.buf.hover, opts)
                 keymap.set('n', '<c-p>', vim.lsp.buf.signature_help, opts)
                 keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
@@ -23,6 +22,8 @@ return {
                 -- in dropdown
                 local tel_builtin = require 'telescope.builtin'
                 local tel_themes = require 'telescope.themes'
+                keymap.set('n', 'gD', function() tel_builtin.lsp_type_definitions(tel_themes.get_dropdown {}) end, opts)
+                keymap.set('n', 'gi', function() tel_builtin.lsp_implementations(tel_themes.get_dropdown {}) end, opts)
                 keymap.set('n', 'gr', function() tel_builtin.lsp_references(tel_themes.get_dropdown {}) end, opts)
                 keymap.set('n', 'gS', function() tel_builtin.lsp_workspace_symbols(tel_themes.get_dropdown {}) end, opts)
                 keymap.set('n', 'gs', function() tel_builtin.lsp_document_symbols(tel_themes.get_dropdown {}) end, opts)
