@@ -5,7 +5,7 @@ return {
         opts = {
             keymaps = {
                 -- open blame window
-                blame = "<Leader>gb",
+                blame = "<Leader>ga",
                 -- open file/folder in git repository
                 browse = "<Leader>go",
             },
