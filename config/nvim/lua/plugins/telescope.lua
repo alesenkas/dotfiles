@@ -4,7 +4,9 @@ return {
         cmd = 'Telescope',
         dependencies = {
             { 'nvim-telescope/telescope-fzy-native.nvim' },
-            { 'nvim-telescope/telescope-ui-select.nvim' }
+            { 'nvim-telescope/telescope-ui-select.nvim' },
+            { 'dinhhuy258/git.nvim' },
+            { 'octarect/telescope-menu.nvim' },
         },
         keys = {
             { '<leader>n',  function() require 'telescope.builtin'.find_files() end },
@@ -14,9 +16,7 @@ return {
             { '<A-`>',      function() require 'telescope.builtin'.commands() end },
             -- git
             { '<leader>gf', function() require 'telescope.builtin'.git_files() end },
-            { '<leader>gc', function() require 'telescope.builtin'.git_commits() end },
-            { '<leader>gb', function() require 'telescope.builtin'.git_branches() end },
-            { '<leader>gs', function() require 'telescope.builtin'.git_status() end },
+            { '<leader>gm', function() require 'telescope'.extensions.menu.git {} end }
         },
         opts = {
             defaults = {
@@ -34,6 +34,18 @@ return {
             extensions = {
                 ['ui-select'] = {
                     require 'telescope.themes'.get_dropdown {}
+                },
+                menu = {
+                    git = {
+                        items = {
+                            { "Status",      function() require 'telescope.builtin'.git_status() end },
+                            { "Blame",       function() require 'git.blame'.blame() end },
+                            { "Revert file", function() require 'git.revert'.open(true) end },
+                            { "Diff",        function() require 'git.diff'.open() end },
+                            { "Commits",     function() require 'telescope.builtin'.git_commits() end },
+                            { "Branches",    function() require 'telescope.builtin'.git_branches() end }
+                        }
+                    }
                 }
             },
             pickers = {
@@ -47,6 +59,7 @@ return {
             telescope.setup(opts)
             telescope.load_extension 'fzy_native'
             telescope.load_extension 'ui-select'
+            telescope.load_extension 'menu'
         end
     }
 }
