@@ -14,6 +14,10 @@ else
     alias l="ls -CF"
 fi
 
+if type 'ncdu' > /dev/null; then
+    alias du='ncdu --color dark'
+fi
+
 if type 'nvim' > /dev/null; then
     alias vim='nvim'
 fi
