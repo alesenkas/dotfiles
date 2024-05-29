@@ -21,6 +21,11 @@ return {
         opts = {
             defaults = {
                 layout_strategy = 'vertical',
+                path_display = {
+                    filename_first = {
+                        reverse_directories = false
+                    }
+                },
                 mappings = {
                     i = {
                         ['<C-j>'] = require 'telescope.actions'.move_selection_next,
