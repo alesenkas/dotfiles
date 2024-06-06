@@ -44,7 +44,7 @@ return {
                     git = {
                         items = {
                             { "Status",      function() require 'telescope.builtin'.git_status() end },
-                            { "Blame",       function() require 'git.blame'.blame() end },
+                            { "Blame",       "BlameToggle" },
                             { "Revert file", function() require 'git.revert'.open(true) end },
                             { "Diff",        function() require 'git.diff'.open() end },
                             { "Commits",     function() require 'telescope.builtin'.git_commits() end },
