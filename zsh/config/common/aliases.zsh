@@ -22,6 +22,10 @@ if type 'nvim' > /dev/null; then
     alias vim='nvim'
 fi
 
+if type 'neovide' > /dev/null; then
+    alias nvd='neovide'
+fi
+
 if type 'batcat' > /dev/null; then
     alias bat='batcat'
 fi

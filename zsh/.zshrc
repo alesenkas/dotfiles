@@ -89,6 +89,8 @@ fi
 ZSH_CONFIG_DIR="$HOME/.config/zsh"
 # local specific config
 [ -f "$ZSH_CONFIG_DIR/local.zsh" ] && source "$ZSH_CONFIG_DIR/local.zsh"
+# env
+[ -f "$ZSH_CONFIG_DIR/common/env.zsh" ] && source "$ZSH_CONFIG_DIR/common/env.zsh"
 # functions
 [ -f "$ZSH_CONFIG_DIR/common/functions.zsh" ] && source "$ZSH_CONFIG_DIR/common/functions.zsh"
 # aliasing

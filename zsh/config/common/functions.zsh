@@ -29,7 +29,7 @@ vag() {
     read -r file line <<<"$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1, $2}')"
 
     if [[ -n $file ]]; then
-        vim $file +$line
+        ${EDITOR:-nvim} $file +$line
     fi
 }
 
