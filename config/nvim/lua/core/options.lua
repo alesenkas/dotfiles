@@ -7,16 +7,16 @@ opt.title = true
 opt.autowrite = true
 
 -- line numbers
-opt.relativenumber = true
+opt.relativenumber = false
 opt.number = true
 
 -- tabs, text identation
-opt.tabstop = 4 -- 4 spaces for tabs
-opt.shiftwidth = 4 -- 4 spaces for ident width
-opt.expandtab = true -- expand tab to spaces
-opt.softtabstop = 4 -- remove tab as 4 spaces
+opt.tabstop = 4       -- 4 spaces for tabs
+opt.shiftwidth = 4    -- 4 spaces for ident width
+opt.expandtab = true  -- expand tab to spaces
+opt.softtabstop = 4   -- remove tab as 4 spaces
 opt.autoindent = true -- copy ident
-opt.wrap = false -- disable line wrapping
+opt.wrap = false      -- disable line wrapping
 
 -- backpace
 opt.backspace = "indent,eol,start"
@@ -28,12 +28,13 @@ opt.cursorline = true
 opt.clipboard:append("unnamedplus") -- use system clipboard as default
 
 -- search settings
-opt.hlsearch = false -- no higlighting search
+opt.hlsearch = false  -- no higlighting search
 opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- asumes case sensetive search when using mixed case
+opt.smartcase = true  -- asumes case sensetive search when using mixed case
 
 -- suppot russian keymap
-opt.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+opt.langmap =
+"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 -- opt.keymap = "russian-jcukenwin"
 -- opt.iminsert = 0
 -- opt.imsearch = -1
@@ -41,7 +42,7 @@ opt.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKL
 -- undo files
 local undo_dir = vim.fn.stdpath('data') .. '/undodir'
 if vim.fn.isdirectory(undo_dir) == 0 then
-  vim.fn.mkdir(undo_dir, "0700")
+    vim.fn.mkdir(undo_dir, "0700")
 end
 opt.undodir = undo_dir
 opt.undofile = true
