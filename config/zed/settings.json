@@ -1,0 +1,38 @@
+{
+    "features": {
+        "inline_completion_provider": "none"
+    },
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false
+    },
+    "base_keymap": "JetBrains",
+    "autosave": "on_focus_change",
+    "vim_mode": true,
+    "vim": {
+        "use_system_clipboard": "always"
+    },
+    "ui_font_size": 16,
+    "buffer_font_size": 13,
+    "theme": {
+        "mode": "dark",
+        "light": "Gruvbox Light Hard",
+        "dark": "Gruvbox Dark Hard"
+    },
+    "tab_bar": {
+        "show": false
+    },
+    "toolbar": {
+        "breadcrumbs": false,
+        "quick_actions": false
+    },
+    "enable_language_server": true,
+    "tab_size": 4,
+    "languages": {
+        "JavaScript": {
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        }
+    }
+}

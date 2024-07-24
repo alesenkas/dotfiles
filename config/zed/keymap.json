@@ -1,0 +1,25 @@
+[
+    {
+        "context": "Workspace",
+        "bindings": {
+            "ctrl-`": "workspace::ToggleBottomDock",
+            "ctrl-j": null
+        }
+    },
+    {
+        "context": "Editor && VimControl",
+        "bindings": {
+            "space e": "tab_switcher::Toggle",
+            "space n": "file_finder::Toggle",
+            "alt-1": "project_panel::ToggleFocus"
+        }
+    },
+    {
+        "context": "Editor && VimControl && !VimWaiting &&!menu",
+        "bindings": {
+            "ctrl-b": "editor::GoToDefinition",
+            "ctrl-shift-j": "editor::MoveLineDown",
+            "ctrl-shift-k": "editor::MoveLineUp"
+        }
+    }
+]
