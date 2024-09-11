@@ -28,6 +28,7 @@
     },
     "enable_language_server": true,
     "tab_size": 4,
+    "preferred_line_length": 120,
     "languages": {
         "JavaScript": {
             "code_actions_on_format": {
