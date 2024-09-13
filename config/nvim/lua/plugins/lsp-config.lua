@@ -53,7 +53,7 @@ return {
 
             local def_config_servers = {
                 'rust_analyzer',
-                'tsserver',
+                'ts_ls',
                 'cssls',
                 'stylelint_lsp',
                 'html'
