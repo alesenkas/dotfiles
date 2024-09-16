@@ -103,6 +103,9 @@ function _install_default_env {
     _info "IdeaVim"
     ln -sv "$PWD/config/ideavim" "$HOME/.config"
 
+    _info "Zed"
+    ln -sv "$PWD/config/zed" "$HOME/.config"
+
     _info "Sublime Text"
     mkdir -p "$HOME/.config/sublime-text-3/Packages/User"
     ln -sv "$PWD/config/sublime-text/Packages/User/Preferences.sublime-settings" "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
