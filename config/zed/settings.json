@@ -22,6 +22,9 @@
     "tab_bar": {
         "show": false
     },
+    "tabs": {
+        "file_icons": true
+    },
     "toolbar": {
         "breadcrumbs": false,
         "quick_actions": false
