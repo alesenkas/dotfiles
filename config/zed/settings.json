@@ -26,7 +26,7 @@
         "file_icons": true
     },
     "toolbar": {
-        "breadcrumbs": false,
+        "breadcrumbs": true,
         "quick_actions": false
     },
     "enable_language_server": true,
