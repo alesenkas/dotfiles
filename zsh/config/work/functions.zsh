@@ -1,6 +1,6 @@
 ############## COMMON ##############
 jb-auto() {
-    local krupd="$PLN_DIST/krupd" 
+    local krupd="$PLN_DIST/krupd"
     local cmd
     cmd=$(bash $krupd -buildfile ~/.krupd.xml -p |
         awk -F " " 'NF == 1 {print $1}' |
@@ -13,6 +13,11 @@ jb-auto() {
 
 hgnv() {
     hg diff pom.xml | grep -E "\+.*<.*version>" | awk 'BEGIN{FS="<|>"}{print $2 " = " $3}'
+}
+
+############# GIT ##############
+gitnv() {
+    git -P diff --staged pom.xml | grep -E "\+.*<.*version>" | awk 'BEGIN{FS="<|>"}{print $2 " = " $3}'
 }
 
 ############## POSTGRES ##############
