@@ -56,7 +56,8 @@ return {
                 'ts_ls',
                 'cssls',
                 'stylelint_lsp',
-                'html'
+                'html',
+                'bashls'
             }
             for _, server_name in ipairs(def_config_servers) do
                 lspconfig[server_name].setup({

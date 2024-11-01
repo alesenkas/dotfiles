@@ -25,7 +25,8 @@ return {
                     "ts_ls",
                     "cssls",
                     "stylelint_lsp",
-                    "html"
+                    "html",
+                    "bashls"
                 }
             })
         end
