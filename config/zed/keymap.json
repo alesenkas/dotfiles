@@ -21,5 +21,11 @@
             "ctrl-shift-j": "editor::MoveLineDown",
             "ctrl-shift-k": "editor::MoveLineUp"
         }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "ctrl-w *": null
+        }
     }
 ]
