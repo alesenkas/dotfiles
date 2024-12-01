@@ -51,7 +51,7 @@ function _cleanup {
     _rmd "$HOME/.config/git"
     _rmd "$HOME/.config/ideavim"
     _rmf "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
-
+    _rmf "$HOME/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap"
 }
 
 function _install_default_env {
@@ -109,6 +109,7 @@ function _install_default_env {
     _info "Sublime Text"
     mkdir -p "$HOME/.config/sublime-text-3/Packages/User"
     ln -sv "$PWD/config/sublime-text/Packages/User/Preferences.sublime-settings" "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
+    ln -sv "$PWD/config/sublime-text/Packages/User/Default (Linux).sublime-keymap" "$HOME/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap"
 }
 
 function _install_work_env {
