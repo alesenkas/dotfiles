@@ -6,7 +6,6 @@ return {
             options = {
                 theme = 'gruvbox-material',
                 incons_enabled = true,
-                section_separators = ''
             }
         }
     },
