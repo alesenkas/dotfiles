@@ -23,6 +23,16 @@ autocmd("CmdlineLeave", {
     command = ":set nohlsearch"
 })
 
+-- yank higlight
+augroup("YankHighlight", { clear = true })
+autocmd("TextYankPost", {
+    group = "YankHighlight",
+    pattern = "*",
+    callback = function()
+        vim.hl.on_yank()
+    end
+})
+
 -- detect not typical file types
 augroup("DetectFileTypes", { clear = true })
 autocmd({ "BufRead", "BufNewFile" }, {
