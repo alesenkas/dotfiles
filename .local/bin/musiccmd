@@ -4,16 +4,16 @@ flag=$1
 
 case $flag in
     -u)
-        playerctl --player=cmus,%any play-pause
+        playerctl --player=cmus,spotify,%any play-pause
         ;;
     -n)
-        playerctl --player=cmus,%any next
+        playerctl --player=cmus,spotify,%any next
         ;;
     -r)
-        playerctl --player=cmus,%any previous
+        playerctl --player=cmus,spotify,%any previous
         ;;
     -s)
-        playerctl --player=cmus,%any stop
+        playerctl --player=cmus,spotify,%any stop
         ;;
     *)
         echo "Unknown command"
