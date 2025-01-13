@@ -24,10 +24,10 @@ nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
 
-nnoremap <C-s-j> :m +1<CR>
-nnoremap <C-s-k> :m -2<CR>
-inoremap <C-s-j> <Esc>:m +1<CR>gi
-inoremap <C-s-k> <Esc>:m -2<CR>gi
+" nnoremap <C-s-j> :m +1<CR>
+" nnoremap <C-s-k> :m -2<CR>
+" inoremap <C-s-j> <Esc>:m +1<CR>gi
+" inoremap <C-s-k> <Esc>:m -2<CR>gi
 
 nmap <leader>e <action>(RecentFiles)
 nmap <leader>n <action>(GotoClass)
@@ -36,6 +36,8 @@ nmap <leader>/ <action>(ShowErrorDescription)
 nmap <C-p> <action>(ParameterInfo)
 nmap <C-o> <action>(Back)
 nmap <C-i> <action>(Forward)
+nmap <C-s-j> <action>(MoveStatementDown)
+nmap <C-s-k> <action>(MoveStatementUp)
 
 nmap Й Q
 nmap Ц W
