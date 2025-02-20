@@ -14,6 +14,7 @@ set surround
 set easymotion
 set commentary
 set NERDTree
+set highlightedyank
 
 " system clipboard
 vmap <leader>y "+y
