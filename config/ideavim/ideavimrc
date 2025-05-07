@@ -34,6 +34,9 @@ nmap <leader>e <action>(RecentFiles)
 nmap <leader>n <action>(GotoClass)
 nmap <leader>q <action>(QuickJavaDoc)
 nmap <leader>/ <action>(ShowErrorDescription)
+
+nmap <leader>f <Plug>(easymotion-s)
+
 nmap <C-p> <action>(ParameterInfo)
 nmap <C-o> <action>(Back)
 nmap <C-i> <action>(Forward)
