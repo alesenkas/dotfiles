@@ -6,6 +6,7 @@
 [push]
     default = simple
 [core]
+    autocrlf = input
     pager = delta
 [interactive]
     diffFilter = delta --color-only
@@ -17,6 +18,7 @@
 [pull]
     ff = only
 [merge]
+    tool = idea
 	conflictstyle = zdiff3
 [mergetool "idea"]
 	cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
