@@ -98,7 +98,9 @@ function _install_default_env {
     ln -sv "$PWD/config/bat" "$HOME/.config"
 
     _info "Git"
-    ln -sv "$PWD/config/git" "$HOME/.config"
+    mkdir -p "$HOME/.config/git"
+    ln -sv "$PWD/config/git/config" "$HOME/.config/git/config"
+    cp "$PWD/config/git/local_env_config" "$HOME/.config/git/local_env_config"
 
     _info "IdeaVim"
     ln -sv "$PWD/config/ideavim" "$HOME/.config"
@@ -123,6 +125,8 @@ function _install_work_env {
     ln -sv "$PWD/zsh/config/work/aliases.zsh" "$HOME/.config/zsh/work/aliases.zsh"
     ln -sv "$PWD/zsh/config/work/functions.zsh" "$HOME/.config/zsh/work/functions.zsh"
     ln -sv "$PWD/zsh/config/work_completion" "$HOME/.config/zsh/work_completion"
+
+    cp "$PWD/config/git/work_config" "$HOME/.config/git/work_config"
 }
 
 

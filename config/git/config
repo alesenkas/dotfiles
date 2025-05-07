@@ -8,6 +8,8 @@
 [core]
     autocrlf = input
     pager = delta
+[init]
+    defaultBranch = main
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -26,3 +28,8 @@
 [rerere]
 	enabled = true
 	autoUpdate = true
+; -------------------------------------
+[include]
+    path = ./local_env_config
+[includeIf "hasconfig:remote.*.url:*//*ntp-gitlab.krista.ru*/**"]
+    path = ./work_config
