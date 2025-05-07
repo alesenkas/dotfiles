@@ -38,6 +38,10 @@ if type \thg > /dev/null; then
     alias thg='start_thg'
 fi
 
+if type 'yazi' > /dev/null; then
+    alias y='yazi_wrapper'
+fi
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
