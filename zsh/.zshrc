@@ -47,7 +47,6 @@ setopt extendedglob
 
 # fzf-tab autocomplete
 #
-zstyle ':fzf-tab:complete:*' fzf-min-height 9
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 # set descriptions format to enable group support
@@ -56,8 +55,12 @@ zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # not show zsh completion menu
 zstyle ':completion:*' menu no
-# preview directory's content with eza when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --icons --group-directories-first $realpath'
+# set fzf-tab completion menu min height
+zstyle ':fzf-tab:complete:*' fzf-min-height 15
+# complete preview
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --level=3 --color=always --icons --group-directories-first $realpath'
+zstyle ':fzf-tab:complete:*' fzf-preview '[[ -d $realpath ]] && eza -1 --color=always --icons --group-directories-first $realpath \
+    || batcat --decorations=always --style="header" --color=always --line-range=:500 $realpath'
 # use FZF_DEFAULT_OPTS
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # switch group using `<` and `>`
