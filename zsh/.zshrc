@@ -85,9 +85,6 @@ export FZF_DEFAULT_OPTS="
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# zsh-syntax-highlighting
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
