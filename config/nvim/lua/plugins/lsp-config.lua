@@ -30,8 +30,8 @@ return {
                 keymap.set('n', 'gs', function() tel_builtin.lsp_document_symbols(tel_themes.get_dropdown {}) end, opts)
 
                 -- diagnostic
-                keymap.set('n', '<F2>', vim.diagnostic.goto_next, opts)
-                keymap.set('n', '<S-F2>', vim.diagnostic.goto_prev, opts)
+                keymap.set('n', '<F2>', function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
+                keymap.set('n', '<S-F2>', function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
 
                 -- formatting
                 if client.server_capabilities.documentFormattingProvider then
@@ -48,7 +48,6 @@ return {
                 end
             end
 
-            local lspconfig = require 'lspconfig'
             local capabilities = require 'cmp_nvim_lsp'.default_capabilities()
 
             local def_config_servers = {
@@ -60,27 +59,27 @@ return {
                 'bashls'
             }
             for _, server_name in ipairs(def_config_servers) do
-                lspconfig[server_name].setup({
+                vim.lsp.config(server_name, {
                     capabilities = capabilities,
                     on_attach = on_attach
                 })
             end
 
-            lspconfig['lua_ls'].setup({
+            vim.lsp.config('lua_ls', {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
                     Lua = {
                         runtime = {
-                            version = 'LuaJIT',
+                            version = 'LuaJIT'
                         },
                         diagnostics = {
-                            globals = { 'vim' },
+                            globals = { 'vim' }
                         },
                         workspace = {
                             checkThirdParty = false,
                             library = vim.api.nvim_get_runtime_file("", true),
-                        },
+                        }
                     }
                 }
             })
