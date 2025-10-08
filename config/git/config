@@ -33,3 +33,5 @@
     path = ./local_env_config
 [includeIf "hasconfig:remote.*.url:*//*ntp-gitlab.krista.ru*/**"]
     path = ./work_config
+[includeIf "hasconfig:remote.*.url:*//*gitlab.infra.krista.ru*/**"]
+    path = ./work_config
