@@ -9,7 +9,7 @@
     "gruvbox_iconset_spacegray": true,
 	"font_face": "JetBrainsMono Nerd Font Regular",
 	"font_options": ["dlig"],
-	"font_size": 11,
+	"font_size": 10,
 	"show_encoding": true,
 	"translate_tabs_to_spaces": true,
 	"dictionary": ["Packages/Language - English/en_US.dic", "Dictionaries/ru_RU.dic"],
