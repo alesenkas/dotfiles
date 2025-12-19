@@ -20,8 +20,9 @@
 	"caret_extra_bottom": 0,
 	"caret_extra_width": 1,
 	"index_files": true,
-	"ignored_packages": [],
+	"ignored_packages": [
+	],
 	"vintage_start_in_command_mode": true,
 	"vintage_ctrl_keys": true,
-	"vintage_use_clipboard": true
+	"vintage_use_clipboard": true,
 }
