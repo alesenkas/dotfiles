@@ -19,8 +19,10 @@ set highlightedyank
 
 nmap <leader>e <action>(RecentFiles)
 nmap <leader>n <action>(GotoClass)
+nmap <leader>u <action>(GotoSuperMethod)
 nmap <leader>q <action>(QuickJavaDoc)
 nmap <leader>/ <action>(ShowErrorDescription)
+nmap <leader>r <action>(Replace)
 nmap <leader>f <Plug>(easymotion-s)
 
 nmap <C-p> <action>(ParameterInfo)
