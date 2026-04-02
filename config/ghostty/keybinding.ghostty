@@ -1,0 +1,12 @@
+# split keybind
+
+keybind = alt+w>v=new_split:right
+keybind = alt+w>s=new_split:down
+keybind = alt+w>c=close_surface
+keybind = alt+w>alt+w=goto_split:next
+keybind = alt+w>h=goto_split:left
+keybind = alt+w>j=goto_split:down
+keybind = alt+w>k=goto_split:up
+keybind = alt+w>l=goto_split:right
+
+keybind = ctrl+e=toggle_tab_overview
