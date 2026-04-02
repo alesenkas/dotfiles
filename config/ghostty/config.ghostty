@@ -1,0 +1,14 @@
+theme = Kolorit
+shell-integration-features = no-cursor
+cursor-style = block
+
+background=#282828
+font-size = 10
+window-width = 175
+window-height = 60
+gtk-custom-css=custom.css
+gtk-titlebar-style = tabs
+gtk-toolbar-style = flat
+
+config-file = keybinding.ghostty
+config-file = ?config.local

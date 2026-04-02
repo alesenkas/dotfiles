@@ -1,0 +1,23 @@
+window {
+    border-radius: 6px;
+}
+
+tabbar {
+    margin: -8px;
+}
+
+tabbar tabbox {
+    transform: translateY(-4px);
+}
+
+tabbar tabbox tab {
+    transform: translateY(10px);
+}
+
+tabbar tabbox tab>* {
+    transform: translateY(-5px);
+}
+
+tabbar button {
+    transform: scale(0.8);
+}
