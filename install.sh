@@ -49,6 +49,7 @@ function _cleanup {
     _rmd "$HOME/.config/nvim"
     _rmd "$HOME/.config/bat"
     _rmd "$HOME/.config/git"
+    _rmd "$HOME/.config/ghostty"
     _rmd "$HOME/.config/ideavim"
     _rmf "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
     _rmf "$HOME/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap"
@@ -101,6 +102,13 @@ function _install_default_env {
     mkdir -p "$HOME/.config/git"
     ln -sv "$PWD/config/git/config" "$HOME/.config/git/config"
     cp "$PWD/config/git/local_env_config" "$HOME/.config/git/local_env_config"
+
+    _info "Ghostty"
+    mkdir -p "$HOME/.config/ghostty"
+    ln -fsv "$PWD/config/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
+    ln -sv "$PWD/config/ghostty/custom.css" "$HOME/.config/ghostty/custom.css"
+    ln -sv "$PWD/config/ghostty/keybinding.ghostty" "$HOME/.config/ghostty/keybinding.ghostty"
+    touch "$HOME/.config/ghostty/config.local"
 
     _info "IdeaVim"
     ln -sv "$PWD/config/ideavim" "$HOME/.config"
