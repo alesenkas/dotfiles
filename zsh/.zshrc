@@ -90,6 +90,7 @@ ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
+export NVM_SYMLINK_CURRENT=true
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
