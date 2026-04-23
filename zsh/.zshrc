@@ -59,6 +59,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:*' fzf-min-height 15
 # complete preview
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --level=3 --color=always --icons --group-directories-first $realpath'
+zstyle ':fzf-tab:complete:git:*' fzf-preview
 zstyle ':fzf-tab:complete:*' fzf-preview '[[ -d $realpath ]] && eza -1 --color=always --icons --group-directories-first $realpath \
     || batcat --decorations=always --style="header" --color=always --line-range=:500 $realpath'
 # use FZF_DEFAULT_OPTS
