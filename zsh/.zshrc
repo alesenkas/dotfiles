@@ -65,8 +65,6 @@ zstyle ':fzf-tab:complete:*' fzf-preview '[[ -d $realpath ]] && eza -1 --color=a
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
-# tmux support
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # mistakes correction
 setopt correctall
