@@ -59,9 +59,13 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:*' fzf-min-height 15
 # complete preview
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --level=3 --color=always --icons --group-directories-first $realpath'
-zstyle ':fzf-tab:complete:git:*' fzf-preview
-zstyle ':fzf-tab:complete:*' fzf-preview '[[ -d $realpath ]] && eza -1 --color=always --icons --group-directories-first $realpath \
-    || batcat --decorations=always --style="header" --color=always --line-range=:500 $realpath'
+zstyle ':fzf-tab:complete:*' fzf-preview '([[ -d $realpath ]] && eza -1 --color=always --icons --group-directories-first $realpath) \
+    || [[ $(file --brief --mime $realpath) == *image/* ]] && chafa -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} $realpath \
+    || ([[ -f $realpath && -r $realpath ]] && batcat --decorations=always --style="header" --color=always --line-range=:500 $realpath)'
+zstyle ':fzf-tab:complete:git:*' fzf-flags --preview-window=hidden
+zstyle ':fzf-tab:complete:*:options' fzf-flags --preview-window=hidden
+zstyle ':fzf-tab:complete:*:argument-1' fzf-flags --preview-window=hidden
+
 # use FZF_DEFAULT_OPTS
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # switch group using `<` and `>`
