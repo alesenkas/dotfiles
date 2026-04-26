@@ -62,6 +62,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --level=3 --color=always
 zstyle ':fzf-tab:complete:*' fzf-preview '([[ -d $realpath ]] && eza -1 --color=always --icons --group-directories-first $realpath) \
     || [[ $(file --brief --mime $realpath) == *image/* ]] && chafa -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} $realpath \
     || ([[ -f $realpath && -r $realpath ]] && batcat --decorations=always --style="header" --color=always --line-range=:500 $realpath)'
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview '[[ $group == "[process ID]" ]] \
+    && ps --pid=$word -o cmd --no-headers -w -w'
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
 zstyle ':fzf-tab:complete:git:*' fzf-flags --preview-window=hidden
 zstyle ':fzf-tab:complete:*:options' fzf-flags --preview-window=hidden
 zstyle ':fzf-tab:complete:*:argument-1' fzf-flags --preview-window=hidden
