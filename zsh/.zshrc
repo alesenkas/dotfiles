@@ -130,3 +130,7 @@ case "$TERM" in
   'Eterm') TERM=Eterm-256color;;
 esac
 
+# open the current command in $EDITOR
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^X' edit-command-line
