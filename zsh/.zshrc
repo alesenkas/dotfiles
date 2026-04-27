@@ -60,7 +60,7 @@ zstyle ':fzf-tab:complete:*' fzf-min-height 15
 # complete preview
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --level=3 --color=always --icons --group-directories-first $realpath'
 zstyle ':fzf-tab:complete:*' fzf-preview '([[ -d $realpath ]] && eza -1 --color=always --icons --group-directories-first $realpath) \
-    || ([[ $(file --brief --mime $realpath) == *image/* ]] && chafa -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} $realpath) \
+    || ([[ -f $realpath && $(file --brief --mime $realpath) == *image/* ]] && chafa -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} $realpath) \
     || ([[ -f $realpath && -r $realpath ]] && batcat --decorations=always --style="header" --color=always --line-range=:500 $realpath)'
 zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview '[[ $group == "[process ID]" ]] \
     && ps --pid=$word -o cmd --no-headers -w -w'
