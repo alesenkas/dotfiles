@@ -1,31 +1,78 @@
 [
     {
+        "bindings": {
+            "ctrl-j": "menu::SelectNext",
+            "ctrl-k": "menu::SelectPrevious",
+        },
+    },
+    {
         "context": "Workspace",
         "bindings": {
-            "ctrl-`": "workspace::ToggleBottomDock",
-            "ctrl-j": null
-        }
+            "ctrl-escape": "workspace::ToggleBottomDock",
+            "ctrl-j": null,
+        },
+    },
+    {
+        "context": "Picker || menu",
+        "bindings": {
+            "ctrl-j": "menu::SelectNext",
+            "ctrl-k": "menu::SelectPrevious",
+        },
     },
     {
         "context": "Editor && VimControl",
         "bindings": {
             "space e": "tab_switcher::Toggle",
             "space n": "file_finder::Toggle",
-            "alt-1": "project_panel::ToggleFocus"
-        }
+            "alt-1": "project_panel::ToggleFocus",
+        },
     },
     {
         "context": "Editor && VimControl && !VimWaiting &&!menu",
         "bindings": {
             "ctrl-b": "editor::GoToDefinition",
             "ctrl-shift-j": "editor::MoveLineDown",
-            "ctrl-shift-k": "editor::MoveLineUp"
-        }
+            "ctrl-shift-k": "editor::MoveLineUp",
+        },
     },
     {
         "context": "Editor",
         "bindings": {
-            "ctrl-w *": null
-        }
-    }
+            "ctrl-w *": null,
+        },
+    },
+    {
+        "context": "Editor && (showing_code_actions || showing_completions)",
+        "bindings": {
+            "ctrl-j": "editor::ContextMenuNext",
+            "ctrl-k": "editor::ContextMenuPrevious",
+        },
+    },
+    {
+        "context": "Editor && showing_signature_help && !showing_completions",
+        "bindings": {
+            "ctrl-j": "editor::SignatureHelpNext",
+            "ctrl-k": "editor::SignatureHelpPrevious",
+        },
+    },
+    {
+        "context": "Picker > Editor",
+        "bindings": {
+            "ctrl-j": "menu::SelectNext",
+            "ctrl-k": "menu::SelectPrevious",
+        },
+    },
+    {
+        "context": "FileFinder || (FileFinder > Picker > Editor) || (FileFinder > Picker > menu)",
+        "bindings": {
+            "ctrl-w k": "pane::SplitUp",
+            "ctrl-w j": "pane::SplitDown",
+            "ctrl-w h": "pane::SplitLeft",
+            "ctrl-w l": "pane::SplitRight",
+            "ctrl-j": "menu::SelectNext",
+            "ctrl-k": "menu::SelectPrevious",
+            "ctrl-h": null,
+            "ctrl-l": null,
+        },
+    },
 ]

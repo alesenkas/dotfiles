@@ -1,40 +1,34 @@
 {
-    "assistant": {
-        "default_model": {
-            "provider": "zed.dev",
-            "model": "claude-3-5-sonnet-latest"
-        },
-        "version": "2"
-    },
-    "features": {
-        "inline_completion_provider": "none"
-    },
     "telemetry": {
         "diagnostics": false,
-        "metrics": false
+        "metrics": false,
     },
     "base_keymap": "JetBrains",
     "autosave": "on_focus_change",
     "vim_mode": true,
     "vim": {
-        "use_system_clipboard": "always"
+        "use_system_clipboard": "always",
     },
+    "relative_line_numbers": "disabled",
     "ui_font_size": 16,
     "buffer_font_size": 13,
     "theme": {
         "mode": "dark",
         "light": "Gruvbox Light Hard",
-        "dark": "Gruvbox Dark Hard"
+        "dark": "Gruvbox Dark Hard",
+    },
+    "title_bar": {
+        "show_project_items": true,
     },
     "tab_bar": {
-        "show": false
+        "show": false,
     },
     "tabs": {
-        "file_icons": true
+        "file_icons": true,
     },
     "toolbar": {
-        "breadcrumbs": true,
-        "quick_actions": false
+        "breadcrumbs": false,
+        "quick_actions": false,
     },
     "enable_language_server": true,
     "tab_size": 4,
@@ -42,8 +36,8 @@
     "languages": {
         "JavaScript": {
             "code_actions_on_format": {
-                "source.fixAll.eslint": true
-            }
-        }
-    }
+                "source.fixAll.eslint": true,
+            },
+        },
+    },
 }
