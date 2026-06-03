@@ -1,13 +1,13 @@
 {
     "telemetry": {
         "diagnostics": false,
-        "metrics": false,
+        "metrics": false
     },
     "base_keymap": "JetBrains",
     "autosave": "on_focus_change",
     "vim_mode": true,
     "vim": {
-        "use_system_clipboard": "always",
+        "use_system_clipboard": "always"
     },
     "relative_line_numbers": "disabled",
     "ui_font_size": 16,
@@ -15,20 +15,23 @@
     "theme": {
         "mode": "dark",
         "light": "Gruvbox Light Hard",
-        "dark": "Gruvbox Dark Hard",
+        "dark": "Gruvbox Dark Hard"
+    },
+    "project_panel": {
+        "dock": "left"
     },
     "title_bar": {
-        "show_project_items": true,
+        "show_project_items": true
     },
     "tab_bar": {
-        "show": false,
+        "show": false
     },
     "tabs": {
-        "file_icons": true,
+        "file_icons": true
     },
     "toolbar": {
         "breadcrumbs": false,
-        "quick_actions": false,
+        "quick_actions": false
     },
     "enable_language_server": true,
     "tab_size": 4,
@@ -36,8 +39,8 @@
     "languages": {
         "JavaScript": {
             "code_actions_on_format": {
-                "source.fixAll.eslint": true,
-            },
-        },
-    },
+                "source.fixAll.eslint": true
+            }
+        }
+    }
 }
