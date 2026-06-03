@@ -10,3 +10,6 @@ keybind = alt+w>k=goto_split:up
 keybind = alt+w>l=goto_split:right
 
 keybind = ctrl+e=toggle_tab_overview
+
+keybind = ctrl+shift+j=scroll_page_lines:1
+keybind = ctrl+shift+k=scroll_page_lines:-1
