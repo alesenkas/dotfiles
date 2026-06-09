@@ -1,5 +1,5 @@
 theme = Kolorit
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor, sudo, ssh-env
 cursor-style = block
 
 background=#282828
