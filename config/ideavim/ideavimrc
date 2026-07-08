@@ -1,4 +1,5 @@
 let mapleader = " "
+let g:camelcasemotion_key = '<leader>'
 
 " set number relativenumber
 set ignorecase
@@ -9,6 +10,7 @@ set clipboard^=unnamedplus
 set virtualedit=onemore
 
 set ideajoin
+set CamelCaseMotion
 set multiple-cursors
 set surround
 set easymotion
