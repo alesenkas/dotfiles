@@ -7,7 +7,8 @@
     "autosave": "on_focus_change",
     "vim_mode": true,
     "vim": {
-        "use_system_clipboard": "always"
+        "use_system_clipboard": "always",
+        "highlight_on_yank_duration": 250
     },
     "relative_line_numbers": "disabled",
     "ui_font_size": 16,
@@ -32,6 +33,10 @@
     "toolbar": {
         "breadcrumbs": false,
         "quick_actions": false
+    },
+    "status_bar": {
+        "show_active_file": true,
+        "line_endings_button": true
     },
     "enable_language_server": true,
     "tab_size": 4,
