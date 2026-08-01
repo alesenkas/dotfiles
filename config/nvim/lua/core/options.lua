@@ -34,7 +34,7 @@ opt.smartcase = true  -- asumes case sensetive search when using mixed case
 
 -- suppot russian keymap
 opt.langmap =
-"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯХЪ;ABCDEFGHIJKLMNOPQRSTUVWXYZ{},фисвуапршолдьтщзйкыегмцчняхъ;abcdefghijklmnopqrstuvwxyz[]"
 -- opt.keymap = "russian-jcukenwin"
 -- opt.iminsert = 0
 -- opt.imsearch = -1
