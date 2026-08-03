@@ -1,5 +1,4 @@
 let mapleader = " "
-let g:camelcasemotion_key = '<leader>'
 
 " set number relativenumber
 set ignorecase
@@ -10,17 +9,16 @@ set clipboard^=unnamedplus
 set virtualedit=onemore
 
 set ideajoin
-set CamelCaseMotion
 set multiple-cursors
 set surround
 set easymotion
 set commentary
 set NERDTree
 set highlightedyank
-set VimEverywhere
+" set VimEverywhere
 
-nmap <leader>e <action>(RecentFiles)
 nmap <leader>n <action>(GotoClass)
+nmap <leader>e <action>(RecentFiles)
 nmap <leader>u <action>(GotoSuperMethod)
 nmap <leader>q <action>(QuickJavaDoc)
 nmap <leader>/ <action>(ShowErrorDescription)
@@ -33,5 +31,8 @@ nmap <C-i> <action>(Forward)
 nmap <C-s-j> <action>(MoveStatementDown)
 nmap <C-s-k> <action>(MoveStatementUp)
 
-set langmap=ФA,ИB,СC,ВD,УE,АF,ПG,РH,ШI,ОJ,ЛK,ДL,ЬM,ТN,ЩO,ЗP,ЙQ,КR,ЫS,ЕT,ГU,МV,ЦW,ЧX,НY,ЯZ,фa,иb,сc,вd,уe,аf,пg,рh,шi,оj,лk,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz
+set langmap=ФA,ИB,СC,ВD,УE,АF,ПG,РH,ШI,ОJ,ЛK,ДL,ЬM,ТN,ЩO,ЗP,ЙQ,КR,ЫS,ЕT,ГU,МV,ЦW,ЧX,НY,ЯZ,фa,иb,сc,вd,уe,аf,пg,рh,шi,оj,лk,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz,Х{,Ъ}
 set langremap
+
+"set keymap=russian-jcukenwin 
+"set iminsert=1              
