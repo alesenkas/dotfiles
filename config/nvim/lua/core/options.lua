@@ -1,3 +1,5 @@
+vim.env.PATH = vim.fn.expand("$NODE_HOME/bin:") .. vim.env.PATH
+
 local opt = vim.opt
 
 -- show window title
