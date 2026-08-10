@@ -12,9 +12,10 @@ keymap.set("v", "<C-k>", ":m '<-2<CR>gvgv", { noremap = true, silent = true })
 keymap.set("n", "<C-k>", ":m -2<CR>", { noremap = true, silent = true })
 
 -- file operations
-keymap.set("n" , "<C-s>", ":w<CR>") -- save
+keymap.set("n", "<C-s>", ":w<CR>")      -- save
+keymap.set("n", "<C-ы>", ":w<CR>")
 keymap.set("i", "<C-s>", "<C-o>:w<CR>") -- save (insert mode)
-keymap.set("n", "<C-q>", ":q<CR>") -- quit
+keymap.set("n", "<C-q>", ":q<CR>")      -- quit
 
 -- system clipboard (required installed xclip)
 keymap.set("v", "<leader>y", '"+y')
@@ -24,4 +25,3 @@ keymap.set("n", "<leader>p", '"+p')
 keymap.set("n", "<leader>P", '"+P')
 keymap.set("v", "<leader>p", '"+p')
 keymap.set("v", "<leader>P", '"+P')
-
