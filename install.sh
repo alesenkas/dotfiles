@@ -85,8 +85,11 @@ function _install_default_env {
     if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
         _ex "required installing oh-my-zsh"
     fi
+
     mkdir -p "$HOME/.oh-my-zsh/custom"
-    ln -sv "$PWD/zsh/.oh-my-zsh/custom/themes" "$HOME/.oh-my-zsh/custom/themes"
+    ln -sv "$PWD/zsh/.oh-my-zsh/custom/themes/spy_noza.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/spy_noza.zsh-theme"
+    ln -sv "$PWD/zsh/.oh-my-zsh/custom/themes/spy_noza_git_prompt.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/spy_noza_git_prompt.zsh-theme"
+
     mkdir -p "$HOME/.config/zsh"
     ln -sv "$PWD/zsh/config/common" "$HOME/.config/zsh/common"
     ln -sv "$PWD/zsh/config/completion" "$HOME/.config/zsh/completion"
