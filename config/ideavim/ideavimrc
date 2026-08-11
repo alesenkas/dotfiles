@@ -28,8 +28,8 @@ nmap <leader>f <Plug>(easymotion-s)
 nmap <C-p> <action>(ParameterInfo)
 nmap <C-o> <action>(Back)
 nmap <C-i> <action>(Forward)
-nmap <C-s-j> <action>(MoveStatementDown)
-nmap <C-s-k> <action>(MoveStatementUp)
+map <C-s-j> <action>(MoveStatementDown)
+map <C-s-k> <action>(MoveStatementUp)
 
 set langmap=ФA,ИB,СC,ВD,УE,АF,ПG,РH,ШI,ОJ,ЛK,ДL,ЬM,ТN,ЩO,ЗP,ЙQ,КR,ЫS,ЕT,ГU,МV,ЦW,ЧX,НY,ЯZ,фa,иb,сc,вd,уe,аf,пg,рh,шi,оj,лk,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz,Х{,Ъ}
 set langremap
