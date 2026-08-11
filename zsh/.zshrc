@@ -3,10 +3,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # colorizing dirs & files
 test -e ~/.dircolors && eval `dircolors ~/.dircolors`
 
-ZSH_THEME="spy_noza"
+ZSH_THEME="spy_noza_git_prompt"
 
 plugins=(
     git
+    git-prompt
     tmux
     mercurial
     extract
