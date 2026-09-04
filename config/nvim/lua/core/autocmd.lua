@@ -6,7 +6,7 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- remove whitespace on save
 autocmd('BufWritePre', {
-    pattern = '',
+    pattern = "*",
     command = ":%s/\\s\\+$//e"
 })
 
@@ -29,7 +29,7 @@ autocmd("TextYankPost", {
     group = "YankHighlight",
     pattern = "*",
     callback = function()
-        vim.hl.on_yank()
+        vim.hl.hl_op()
     end
 })
 
