@@ -88,6 +88,7 @@ export FZF_DEFAULT_OPTS="
 --border
 --color fg:102,fg+:15,bg+:#282828
 --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+--bind='alt-k:preview-up,alt-j:preview-down'
 "
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
