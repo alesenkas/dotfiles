@@ -15,7 +15,10 @@ set easymotion
 set commentary
 set NERDTree
 set highlightedyank
-" set VimEverywhere
+set VimEverywhere
+set yankring
+
+let g:yankring_max_history = 20
 
 nmap <leader>n <action>(GotoClass)
 nmap <leader>e <action>(RecentFiles)
@@ -24,8 +27,8 @@ nmap <leader>q <action>(QuickJavaDoc)
 nmap <leader>/ <action>(ShowErrorDescription)
 nmap <leader>r <action>(Replace)
 nmap <leader>f <Plug>(easymotion-s)
+nmap <leader>p <action>(ParameterInfo)
 
-nmap <C-p> <action>(ParameterInfo)
 nmap <C-o> <action>(Back)
 nmap <C-i> <action>(Forward)
 map <C-s-j> <action>(MoveStatementDown)
