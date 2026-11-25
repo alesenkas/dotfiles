@@ -96,11 +96,12 @@ export FZF_DEFAULT_OPTS="
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-export NVM_SYMLINK_CURRENT=true
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# fnm
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
 
 # sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -139,3 +140,4 @@ esac
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^X^X' edit-command-line
+
