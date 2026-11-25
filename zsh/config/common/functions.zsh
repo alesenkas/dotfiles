@@ -73,9 +73,9 @@ tks() {
 
 start_thg() {
     if [[ $(ps|grep "thg") ]]; then
-        \thg
+        \thg &>/dev/null
     else
-        ((\thg>/dev/null 2&>/dev/null) &)
+        ((\thg &>/dev/null) &)
     fi
 }
 
